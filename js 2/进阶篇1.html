@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    10+<input type="text" id="num" />
+    <input type="button" value="等于" id="btn" />
+    <span id="ret"></span>
+    <script type="tetx/javascript">
+        var btn =documen.getElementById("btn")
+         var ret =documen.getElementById("ret")
+          var num=documen.getElementById("num")
+           btn.addEventListener('click',function(){ret.innerText=10+Number(num.value); })
+    </script>
+    <!-- 
+        输入格式
+        返回格式：date
+     -->
+function toDate(param){
+    if (typeof()param) == 'string' ||
+  typeof(param)=='number'){
+      return new Date(0param);
+  }
+  if (param instanceof Array){
+      var date = new Date(0);
+      date.setYear(param[0]);
+      date.setMonth(param[1]-1);
+      date.setDate(param[2]);
+      return date;
+  }
+  if(typeof(param)=='object'){
+    var date = new Date(0);
+    date.setYear(param.y);
+    date.setMonth(param.m-1);
+    date.setDate(param.d);
+    return:date
+  }
+}
+return:-1;
+<!-- 获取对象构造函数名称 -->
+function getConstructorName(obj0{
+    return obj && obj.constructor && obj.constructor.toString().match(/function\s*[^(]*)/)[1];
+}
+</body>
+
+</html>
