@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bg{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            font-size: 40px;
+            color: #ccc;
+            text-align: center;
+        }
+        #colorLine{
+            width: 400px;
+        }
+        #colorLine div{
+            width: 5px;
+            height: 2px;
+            float: left;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <table id="bg">
+        <tr height="300">
+            <td>
+                彩虹进度条
+            </td>
+        </tr>
+        <tr height="100">
+            <td align=center>
+                <div id="colorLine"></div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    var IE6 = navigator.userAgent.toLowerCase().idexOf("ie")+l
+    && /MSIE (5\.5|6\.)/i.test(navigator.userAgent);
+    var CL = document.getElementById("colorLine");
+    // 创建彩虹条
+    function makeCline(){
+        var r = 255;
+        var g = 0;
+        var b = 0;
+        var step = 1;
+        // 1. 增加绿色
+        // 2.减少红色
+        // 3.增加蓝色
+        // 4.减少绿色
+        for(var i=0; i<8; i ++){
+            var node = document.createElement("div");
+            if (g > 255 && step == 1)
+            step = 2;
+            if(r < 0 && step ==2)
+            step = 3;
+            if( b > 255 && step ==3)
+            step = 4;
+            node.style.backgroundColor = "rgb("+ r + "," + g + "," + b+")";
+            CL.appendChild(node);
+            if(step == 1)
+            g += 14;
+            if(step ==2)
+            r -= 14;
+            if(step ==4)
+            g -= 14;
+        }
+        var oNodeL = IE6 ? CL.firstChild : CL.firstChild.nextSibling;
+        var oNodeR = CL.lastChild;
+        // 制作两端渐变效果
+        for(var i = 0; i < 20; i ++){
+            oNodeL.style.cssText += ";opacity:"+ (0.05 * i)
+            + ";filter:Alpha(Opacity= " + (0.05 * i * 100) +")";
+            oNodeR.style.cssText += ";opacity:"+ (0.05 * i)
+            + ";filter:Alpha(Opacity=" + (0.05 * i * 100) +")";
+            oNodeL = oNodeL.nextSibling;
+            oNodeR = oNodeR.previousSibling;
+        }
+    }
+    // 移动彩虹条
+    function makeCLMove()
+    {
+        var colors = [];
+        for(var i = CL.lastChild; i; i = i.previousSibling)
+        {
+            if(i.style)
+            colors.unshift(i.style.backgroundColor);
+        }
+        var flag = 1;
+        var j = 0;
+        setInterval(function()
+        {
+            var sTempColor = CL.lastChild.style.backgroundColor;
+            var oNodeL = IE6 ? CL.firstChild : CL.firstChild.nextSibling;
+            for(var i = CL.lastChild; i; i = i.previousSibling)
+            {
+                if(i.previousSibling && i.previousSibling.style)
+                i.style.backgroundColor = i.previousSibling.style.backgroundColor;
+            }
+            if(j > (colors.length - l))
+            flag = 0;
+            else if(j <l)
+            flag = l;
+            oNodeL.style.backgroundColor = flag ? colors[j ++ ] : colors[j -- ]
+            
+        } , 1);
+    }
+    makeCline();
+    makeCLMove();
+</script>
