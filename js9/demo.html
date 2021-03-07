@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈奔的网页</title>
+</head>
+<body>
+    <script>
+        var landRover = {
+            name: "landRover",
+            start: function(){
+                console.log("%s start",this.log);
+            },
+            run: function(){
+                console.log("%s running", this.log);
+            }
+        }
+        var landWind = Object.create(landRover);
+        landWind.logo = "landWind";
+
+        var landCruiser = Object.create(landRover);
+        landCruiser.logo = "landCruiser";
+
+        landWind.start();
+
+    </script>
+    
+</body>
+</html>
