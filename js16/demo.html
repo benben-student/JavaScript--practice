@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "user strict";
+        var name = "小明";
+        var age = 20;
+        console.log("你好，${name},你今年${age}岁了！");
+    </script>
+
+
+    <script>
+        var s = "Hello,world";
+        s[0]; //"H"
+        s[6];  //""
+        s[7];  //"W"
+        s[7];  //"!"
+        s[12]; //undefined,超出范围
+        s[13];
+    </script>
+
+
+    <script>
+        //toUpperCase 把一个字符串全部变为大写
+        var s = "Hello,world"
+        s.toUpperCase(); //返回HELLO
+    </script>
+
+
+    <script> 
+        //toLowerCase 把一个字符串全部变为小写
+        var s = "Hello";
+        var lower = s.toLowerCase();
+    </script>
+
+    <script>
+        //indexOf 会指定字符串出现的位置
+        var s = "hello,wold";
+        s.indexOf("world"); //返回7
+        s.indexOf("Wold");  //没有找到，返回-1
+    </script>
+    
+</body>
+</html>
