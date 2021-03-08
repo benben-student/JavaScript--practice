@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Arry可以包含任意数据类型，并通过索引来访问每个元素
+        //要取得Arry长度，可以直接访问length属性
+        var arr = [1,2,3.14,"hello",null,true];
+        arr.length; //6
+        //直接给Arry的length附一个新的值会导致Arry大小发生变化
+        var arr = [1,2,3];
+        arr.length; //3
+        arr.length=6;
+        //arr变为[1，2，3，undefined，undefined，undefined]
+    </script>
+    
+
+    <script>
+        //indexOf  
+        //与String类似，Arry也可以通过indexOf()来搜索一个指定的元素的位置
+        var arr = [10,20,"30","xyz"];
+        arr.indexOf(10);//索引为0
+        arr.indexOf(20);//索引为1
+        arr.indexOf(30);//索引未找到，返回-1
+        arr.indexOf("30");//索引为2
+    </script>
+
+
+<script>
+    //slice
+    //slice()就是对应String的substring版本，截取Arry部分元素后返回一个新的Arry
+    var arr = ["a","b","c","d","e","f","g"];
+    arr.slice(0,3);//从索引0开始到索引3结束不包括索引3：[a,b,c]
+    arr.slice(3);//从索引3开始到结束：[d,e,f,g]
+    //如果不给slice()传递任何参数他会从头到尾截取所有元素
+</script>
+
+<script>
+    //push()和pop
+    //push()向Arry的末尾添加若干元素
+    //pop()则把Arry的最后一个元素删除掉
+    var arr = [1, 2];
+arr.push('A', 'B'); // 返回Array新的长度: 4
+arr; // [1, 2, 'A', 'B']
+arr.pop(); // pop()返回'B'
+arr; // [1, 2, 'A']
+arr.pop(); arr.pop(); arr.pop(); // 连续pop 3次
+arr; // []
+arr.pop(); // 空数组继续pop不会报错，而是返回undefined
+arr; // []
+</script>
+
+<script>
+    //unshift和shift
+    //如果要往Arry的头部添加若干元素则使用unshift()
+    //shift()方法则把Arry的第一个元素删掉
+    var arr = [1, 2];
+arr.unshift('A', 'B'); // 返回Array新的长度: 4
+arr; // ['A', 'B', 1, 2]
+arr.shift(); // 'A'
+arr; // ['B', 1, 2]
+arr.shift(); arr.shift(); arr.shift(); // 连续shift 3次
+arr; // []
+arr.shift(); // 空数组继续shift不会报错，而是返回undefined
+arr; // []
+</script>
+
+
+<script>
+    //join  他把当前Arry的每个元素都用指定的字符串连起来，然后返回连接后的字符
+    var arr = ["a","b","c",1,2,3];
+    arr.join("-");//"a-b-c-1-2-3"
+</script>
+
+<script>
+    //练习
+        // 上述Array包含3个元素，其中头两个元素本身也是Array。
+        //   练习：如何通过索引取到500这个值：
+    "use strict";
+    var arr = [[1,2,3],[400,500,600],"-"];
+    arr.slice(1,2);
+</script>
+
+
+<script>
+    //练习
+          //Array提供了一种顺序存储一组元素的功能，并可以按索引来读写。
+          //练习：在新生欢迎会上，你已经拿到了新同学的名单，请排序后显示：欢迎XXX，XXX，XXX和X
+          'use strict';
+var arr = ['小明', '小红', '大军', '阿黄'];
+
+
+
+</script>
+
+
+</body>
+</html>
