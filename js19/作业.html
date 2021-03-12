@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    var name = "源源";
+    var age = 18;
+    console.log(name);
+    console.log(age);
+
+
+    var a, b, c, d; //声明变量之后分别赋值
+    a = 10;
+    b = 20;
+    c = 30;
+    d = 40;
+    console.log(a, b, c, d);
+
+
+
+    var num;
+    console.log(num); //打印一个声明但没有赋值的变量，undefined
+
+
+    // 变量交换
+    var num1 = 10;
+    var num2 = 20;
+    var temp;
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+    console.log(num1, num2);
+
+
+    // 数据类型
+    // 1、数字类
+    var num1 = 17;
+    console.log(typeof num1); //number
+    var num2 = 1.7;
+    console.log(typeof num2); //number
+
+    // 2、字符串类型
+    var str = "yuanyuan";
+    console.log(typeof str); //string
+
+    //3、布尔类型
+    var flag = true;
+    console.log(typeof flag);
+
+    //4、空数据类型
+    var nul = null;
+    console.log(nul); //null
+
+    //5、未定义类型 undefined
+    var ac;
+    console.log(ac);
+
+
+    // 面试题
+    // 1、NaN
+    var num;
+    console.log(num); //undefined
+    console.log(num + 10); //NaN not a number 不是一个数字
+
+    // 2、不要用小数去验证一个小数
+    var x = 0.1;
+    var y = 0.2;
+    var sum = x + y;
+    console.log(sum);
+    console.log(sum == 0.3); // 只有0.1和0.2特殊
+
+    // 3、不要用NaN去验证NaN
+    var age;
+    console.log(age + 10 == NaN); //false
+
+    // 4、用isNaN验证NaN
+    var num;
+    console.log(isNaN(num)); //true
+    console.log(isNaN(10)); //false
+</script>
+
+<body>
+    <input type="button" value="来点我呀" onclick="alert('嘻嘻你好可爱~')">
+</body>
+
+</html>
