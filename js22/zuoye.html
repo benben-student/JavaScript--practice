@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 运算符的优先级
+        var result = (4 >= 6 || '人' != '阿凡达' && !(12 * 2 == 144) && true);
+        // false || true && true && true
+        console.log(result); //true
+
+        var num = 10;
+        var result2 = (5 == num / 2 && (2 + 2 * num).toString() === '22');
+        // true && true
+        console.log(result2); //true
+
+        // 流程控制
+        if (1 > 2) {
+            console.log(1);
+        } else {
+            console.log(0);
+        }
+        var age = 20;
+        if (age > 18) {
+            console.log('你可以做自己想做的事了哦');
+        } else {
+            console.log('小可爱，你还没有成年哦');
+        }
+
+        // 1、找两个数之间的最大值
+        var num1 = 18;
+        var num2 = 10;
+        if (num1 > num2) {
+            console.log(num1);
+        } else {
+            console.log(num2);
+        }
+
+        //2、判断奇偶
+        var num = parseInt(prompt('请输入一个数字,判断奇偶'));
+        if (num % 2 == 0) {
+            alert('这个数为偶数');
+        } else {
+            alert('这个数为奇数');
+        }
+
+        // 三元运算符
+        var age = prompt('请输入你的年龄');
+        var result = age > 18 ? '成年了' : '未成年';
+        alert(result);
+
+        //判断成绩等级
+        var score = prompt('请输入你的成绩');
+        var p;
+        if (score >= 90 && score <= 100) {
+            p = 'A';
+        } else if (score >= 80) {
+            p = 'B';
+        } else if (score >= 70) {
+            p = 'C'
+            ''
+        } else if (score >= 60) {
+            p = 'D';
+        } else p = 'E';
+        alert('你的成绩等级为' + p);
+
+        switch (p) {
+            case 'A':
+                alert("您的成绩在90~100之间");
+                break;
+            case 'B':
+                alert("您的成绩在80~90之间");
+                break;
+            case 'C':
+                alert("您的成绩在70~80之间");
+                break;
+            case 'D':
+                alert("您的成绩在60~70之间");
+                break;
+            case 'E':
+                alert("您的成绩在0~60之间");
+                break;
+        }
+    </script>
+</body>
+
+</html>
