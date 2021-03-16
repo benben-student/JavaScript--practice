@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //流程控制
+        if (1>2){
+            console.log("1");
+        }else{
+            console.log("2");
+        }
+
+        var age = 20;
+        if (age >18){
+            console.log("小可爱可以去做喜欢的事了");
+        }else{
+            console.log("小可爱还未成年哦");
+        }
+
+        //找两个数的最大值
+        var num1 = 18;
+        var num2 = 20;
+        if(num1>num2){
+            console.log("num1最大");
+        }else{
+            console.log("num2最大");
+        }
+
+        //判断奇偶
+        var a = parseInt(prompt("请输入"));
+        if(a%2==0){
+            alert("为偶数");
+        }else{
+            alert("为奇数");
+        }
+
+        //三元运算符
+        var age = prompt("请输入你的年龄");
+        var result = age > 18 ? "成年了" : "未成年";
+        alert(result);
+
+    </script>
+    
+</body>
+</html>

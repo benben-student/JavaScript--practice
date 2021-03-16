@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var result = (4 >= 6 || '人' != '阿凡达' && !(12 * 2 == 144) && true);
+        console.log(result);
+        
+        var num = 10;
+        var result2 = (5 == num / 2 && (2 + 2 * num).toString() === '22');
+        
+        /*   如果是在90到100(包含)之间则 显示A级
+                *  如果成绩是在80到90(包含)之间,则显示B级
+                *  如果成绩是在70到80(包含)之间,则显示C级
+                *  如果成绩是在60(包含)到70(包含)之间,则显示D级
+                *  如果成绩在0到60(不包含)之间,则显示E级
+         */
+        var score = parseInt(prompt("请输入成绩"));
+        if (!isNaN(score)) {
+            if (score > 90 && sccore <= 100) {
+                console.log("成绩为A级");
+            } else if (score > 80) {
+                console.log("成绩为B级");
+            } else if (score > 70) {
+                console.log("成绩为C级");
+            } else if (score >= 60) {
+                console.log("成绩为D级");
+            } else {
+                console.log("成绩为E级");
+            }
+        } else {
+            console.log("您的输入有误");
+        }
+    </script>
+    
+</body>
+</html>
