@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  1、把知识点全部整理一遍；案例独自写出一遍代码
+
+        自己独立写出
+
+        思考：通过输入框提示用户输入时间信息，根据用户输入的时间弹出问候信息；
+        如：
+        用户输入的时间在6 - 12之间 弹出“上午好”；
+        用户输入的时间在13 - 18之间 弹出“下午好”；
+        用户输入的时间在19 - 23之间 弹出“晚上好”；
+        用户输入的时间在0 - 5之间 弹出“这是休息时间，不要说话！”；
+
+        注意：范围取值推荐 if else if else if实现 */
+
+        while (true) {
+            var time = parseInt(prompt('请输入时间0-24'));
+            if (time >= 0 && time <= 5) {
+                alert('这是休息时间，不要说话');
+                continue;
+            } else if (time >= 6 && time <= 12) {
+                alert('上午好');
+                continue;
+            } else if (time >= 13 && time <= 18) {
+                alert('下午好');
+                continue;
+            } else if (time >= 19 && time <= 24) {
+                alert('晚上好');
+                continue;
+            } else {
+                alert('输入有误请重新输入,正在退出程序。');
+                break;
+            }
+        }
+        // 求：1-100之间的所有的和
+
+        /*  1.for方法
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+         } */
+
+
+        /* 2.while方法
+        var sum = 0;
+        var i = 0;
+        while (i <= 100) {
+            sum += i;
+            i++;
+        }
+        console.log(sum); */
+
+        /* 3.do while 方法
+        var sum = 0;
+        var i = 0;
+        do {
+            sum += i;
+            i++;
+        } while (i <= 100);
+        console.log(sum); */
+
+        // 求：1-100之间的所有的偶数和
+        // var sum = 0;
+        // for (var i = 1; i <= 100; i++) {
+        //     if (i % 2 == 0) {
+        //         sum += i;
+
+        //     }
+        // }
+        // console.log(sum);
+        // 求：1-100之间的所有的奇数和
+        /* var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 != 0) {
+                sum += i;
+
+            }
+        }
+        console.log(sum); */
+        // 求：1-100之间所有整数和的平局值
+        /*  var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+                sum += i;
+        }
+         console.log(sum / 100); */
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
