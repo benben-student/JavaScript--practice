@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 打印五角星
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+                document.write("☆");
+            }
+            document.write("<br />");
+        }
+        document.write("<br />");
+        //打印三角五角星
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+                if (j < i) {
+                    document.write(" ");
+                } else {
+                    document.write("☆");
+                }
+            }
+            document.write("<br />");
+        }
+
+        document.write("<br />");
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 5; j++) {
+                if (j > i) {
+                    document.write(" ");
+                } else {
+                    document.write("☆");
+                }
+            }
+            document.write("<br />");
+        }
+
+        document.write("<br />");
+        //九九乘法表
+        for (var i = 1; i < 10; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write(j + '*' + i + '=' + i * j);
+                document.write(" ");
+            }
+            document.write("<br />");
+        }
+        //需求1:求数组中所有元素的和
+        var arr = [10, 20, 18, 28, 49];
+        var s = 0;
+        for (var i = 0; i < arr.length - 1; i++) {
+            s += arr[i];
+        }
+        console.log('数组中所有元素的和为：' + s);
+        //需求2：求数组中所有元素的平均值
+        var ave = s / (arr.length - 1);
+        console.log('数组中所有元素的平均值为' + ave);
+        arr[2] = 18;
+        console.log('数组arr的第三个元素为' + arr[2]);
+
+        //break关键字
+        while (true) {
+            console.log("进入死循环了吗？");
+            break;
+        }
+        console.log("跳出来了诶");
+
+        //找到100~200之间第一个能被7整除的数
+
+        for (var i = 100; i <= 200; i++) {
+            if (i % 7 == 0) {
+                break;
+            }
+        }
+        console.log(i);
+
+        //求100~200之间所有奇数的和
+        var s = 0;
+        for (var i = 100; i < 200; i++) {
+            if (i % 2 != 0) {
+                s += i;
+            } else continue;
+        }
+        console.log('100~200之间所有奇数的和为' + s);
+    </script>
+</body>
+
+</html>
