@@ -48,6 +48,7 @@ console.log(typeof String(nul));
 //面试题
 var str = "10";
 var str1 = "18aaa";
+//aa
 console.log(+str);
 console.log(-str);
 console.log(str1 - 0);
