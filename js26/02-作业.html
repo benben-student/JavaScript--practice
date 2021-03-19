@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            /* 合并 */
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td {
+            width: 80px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        /*
+        九九乘法口诀表 
+         */
+        // i-行 j-列
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write(j + "*" + i + "=" + i * j + "&nbsp;");
+            }
+            document.write("<br />");
+        }
+
+        //以上必须会
+
+        //添加样式-表格
+        //cellpadding边距 cellspang间距
+        // 表格开始
+        document.write("<table border = '1' cellpadding = '0' cellspacing = '0'>");
+        //第一层循环控制行
+        for (var i = 1; i <= 9; i++) {
+            //行-tr
+            document.write("<tr>");
+            //列
+            for (var j = 1; j <= i; j++) {
+                document.write("<td>");
+                document.write(j + '*' + i + '=' + j * i);
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        // 表格结束
+
+
+
+        
+        //课下练习
+        //表格样式
+        document.write("<table border = '1' cellpadding = '0' cellspacng = '0'>");
+        // 行
+        for (var i = 1; i <= 9; i++) {
+            document.write("<tr>");
+            // 列
+            for (var j = 1; j <= i; j++) {
+                document.write("<td>");
+                    document.write(j + "*" + i + "=" + i * j);
+                document.write("</td>");
+            }
+            document.write("</tr>");
+
+        }
+        document.write("</table>");
+
+
+
+
+    </script>
+</body>
+
+</html>

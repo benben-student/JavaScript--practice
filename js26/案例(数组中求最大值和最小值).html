@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //最大值max：循环；判断
+        var arr1 = [1, 100, 101, 5, 6, 9, 17, 111, 289];
+        //假设数组中的第一个元素就是最大值
+        var max = arr1[0];
+        //数组循环---遍历每个数据：拿到数组中的每个元素
+        for (var i = 0; i < arr1.length; i++) {
+            //判断
+            if (max < arr1[i]) {
+                max = arr1[i];//289
+            }
+        }
+        console.log(max);
+
+        //最小值min
+        //假设数组中的第一个元素为最小值
+        var min = arr1[0];
+        //数组遍历
+        for (var i = 0; i < arr1.length; i++) {
+            //判断
+            if (min > arr1[i]) {
+                min = arr1[i];//1
+            }
+        }
+        console.log(min);
+
+        //扩展：数组的最大值、最小值、平均值、求和...杂糅一起
+        var arr = [1, 2, 3, 4, 5];
+        //定义变量存储和，假设最大值和最小值
+        var sum = 0;
+        var max = arr[0];//假设的最大值
+        var min = arr[0];//假设的最小值
+        //数组循环-遍历
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];//求和
+            //判断
+            if (max < arr[i]) {
+                max = arr[i];//最大值
+            } else if (min > arr[i]) {
+                min = arr[i];//最小值
+            }
+        }
+        console.log("数组中所有数据的和:" + sum);
+        console.log("数组中所有数据的和的平均值:" + sum / arr.length);
+        console.log("数组中所有数据的最大值:" + max);
+        console.log("数组中所有数据的最小值:" + min);
+
+    </script>
+</body>
+
+</html>
