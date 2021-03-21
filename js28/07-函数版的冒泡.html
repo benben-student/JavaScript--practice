@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body><!-- 
+    <script>
+        // function sortArray(arr){
+        //     // 第一层循环控制比较的轮数
+        //     for(var i = 0; i <arr.length - 1; i++){
+        //         // 第二层循环控制比较的次数
+        //         for(var j = 0; j < arr.length - 1 - i; j++){
+        //             // 判断
+        //             if(arr[j] > arr[j + 1]){
+        //                 var temp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1]= temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // var result = sortArray([10,88,9,15,2,1]);
+        // console.log(result);
+
+        function sortArray(arr) {
+            // 第一层循环控制比较的轮数
+            for (var i = 0; i < arr.length - 1; i++) {
+                // 第二层循环控制比较的次数
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    // 判断
+                    if (arr[j] < arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var result = sortArray([10, 88, 9, 15, 2, 1]);
+        console.log(result);
+    </script>
+    <script>
+       function usa(app){
+        for (var j = 0; j < app.length - 1; j++) {
+            for (var k = 0; k < app.length - 1 - j; k++) {
+                if (app[k] < app[k + 1]) {
+                    var temp3 = app[k];
+                    app[k] = app[k + 1];
+                    app[k + 1] = temp3;
+                }
+            }
+        }
+        return app;
+       }
+       var gat=usa([2,4,8,1,45,98,12,34,67]);
+       console.log(gat);
+
+    </script> -->
+    <script>
+        function getSum(sum){
+            for(i=0;i<sum.length-1;i++){
+                for(j=0;j<sum.length-1-i;j++){
+                    if(sum[j]>sum[j+1]){
+                        var temp =sum[j];
+                        sum[j]=sum[j+1];
+                        sum[j+1]=temp;
+                    }
+                }
+            }
+            return sum;
+        }
+        var getSum1 = getSum([9,8,7,6,5,4,3,2,1]);
+        console.log(getSum1);
+    </script>
+</body>
+
+</html>
