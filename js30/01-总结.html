@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 封装翻转数组
+        /* function sevser(arr) {
+            for (var i = 0; i <= arr.length / 2; i++) {
+                var temp = arr[i];
+                arr[i] = arr[arr.length - i - 1];
+                arr[arr.length - i - 1] = temp;
+            }
+            return arr;
+        }
+        var result = sevser([1,2,3,4,5]);
+        console.log(result); */
+        // 封装冒泡
+        /* function Mp(arr) {
+            for (var i = 0; i <= arr.length - 1; i++) {
+                for (var j = 0; j <= arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var result = Mp([2,31,32,44,12,1]);
+        console.log(result); */
+        // 封装斐波那契
+        /*   function Fib(num) {
+            var num1 = 1;
+            var num2 = 1;
+            sum = 0;
+            for (var i = 3; i <= num; i++) {
+                sum = num1 + num2;
+                num1 = num2;
+                num2 = sum;
+            }
+            return sum;
+        }
+        var result = Fib(12);
+        console.log(result); */
+        // 封装判断天数
+        function getDays(year, month, day) {
+            var days = day;
+            if (day == 1) {
+                return day;
+            }
+            months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            for (var i = 0; i <= month - 1; i++) {
+                days += months[i];
+            }
+            if ((year % 4 == 0 && year % 100 != 0 || year % 400 == 0) && month > 2) {
+                days++;
+            }
+            return days;
+        }
+        var result = getDays(2021,3,24);
+        document.write(result);
+    </script>
+</body>
+
+</html>
