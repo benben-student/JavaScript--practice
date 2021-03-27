@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        一，斐波那契数列-经典算法
+        1 1 2 3 5 8 13 21 34 55 89 144
+        1      1       2
+        num1  num2   sum=num1+num2
+        1月   2月    3月
+        
+        1      2       3
+        num1  num2   sum=num1+num2
+        2月   3月    4月
+        num1=num2 nu2=sum
+        ...
+        */
+       var num1 = 1;
+       var num2 = 1;
+       var sum = 0;
+       for(var i = 3; i <= 12; i ++){
+           sum = num1 + num2;
+           num1 = num2;
+           num2 = sum;
+       }
+       console.log(sum);
+
+       //函数版斐波那契数列
+       function feibo(num){
+           var num1 = 1;
+           var num2 = 1;
+           var sum = 0;
+           for(var i = 3; i <= num; i++){
+               sum = num1 + num2;
+               num1 = num2;
+               num2 = sum;
+           }
+           return sum;
+
+       }
+       var result = feibo(12);
+       console.log(result);
+
+       /* 
+       二，arguments获取用户传递参数(不知用户传递几个参数就用arguments)
+       优势：用arguments，就不需要用形参
+       三，命名函数(函数有函数名)和匿名函数(函数无函数名)
+       四，函数综合案例
+       */
+    </script>
+</body>
+</html>

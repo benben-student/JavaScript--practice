@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 获取随机16进制颜色
+        /* function getColor() {
+            var str = '#';
+            var arr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f'];
+            for (var i = 0; i < 6; i++) {
+                var cl = parseInt(Math.random() * arr.length);
+                str += arr[cl];
+            }
+            return str;
+        }
+        var result = getColor();
+        window.onload = function () {
+            document.getElementById('dv').style.backgroundColor = result;
+        } */
+
+        // 函数封装16进制颜色
+        function getColor() {
+            var str = '#'; // 设置变量 str 赋值 # 16进制以#开头
+            // 定义变量 num 存储16进制所有值
+            var num = ['0', '1', '2', '3', '4', '5', '6', '70', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+            // 利用循环获取随机数
+            for (var i = 0; i < 6; i++) { // 因为16进制最多6个值 所以 i<6
+                var suiji = parseInt(Math.random() * num.length); // 定义随机数
+                str += num[suiji];
+            }
+            return str;
+        }
+        var result = getColor();
+        window.onload = function () {
+            document.getElementById('dv').style.backgroundColor = result;
+            /* 
+                document 文档
+                get 获取
+                element 元素
+                by 通过
+            */
+        }
+    </script>
+    <div id="dv">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 5 .indexOf(要找的字符串，从什么位置开始) 返回这个字符串的索引 没找到返回 -1 找到显示这个字符串的索引位置 2可以省略
+        var str = '绝望hiu额发挥Hiji';
+        var index = str.indexOf('i', 4);
+        console.log(index);
+
+        // 6 .lastIndexOf() 从后往前查找 但是字符串中的索引位置还是从左往右
+        var index = str.lastIndexOf('i');
+        console.log(index);
+
+        // 7 .replace('原来的字符串','新的字符串') 替换字符串
+        var str1 = '哇 这是狗蛋吗 怎么辣莫帅';
+        if (str1.replace('狗蛋') != -1) {
+            str1 = str1.replace('狗蛋', 'qcp');
+        } else {
+            console.log('未找到');
+        }
+        console.log(str1);
+
+        // 8 .slice(开始的索引，结束的索引) 
+        var str2 = '牛批克拉斯我得宝贝';
+        console.log(str2.slice(2, 7));
+        console.log(str2.slice(4));
+
+        // 9 .split (以什么字符串拆分，拆分后留下的字符串个数) 第二个参数可以省略 以什么字符串来拆分 把字符串指定的字符拆分成数组
+        var str3 = ('郭靖,小龙人,狗蛋,赵四,王二');
+        var str4 = str3.split(',');
+        var str5='';
+        for (var i = 0; i <= str4.length-1; i++) {
+            console.log(str4[i]);
+        }
+        console.log(str4);
+    </script>
+</body>
+
+</html>

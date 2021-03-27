@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //判断数组方式
+        //1.instanceof判断这个对象是不是数组。如果是数组，则返回true，如果不是数组，则返回false
+        var str = "hello world!";//string
+        console.log(str instanceof Array);//false
+        var num = 1;//number
+        console.log(num instanceof Array);//false
+        var arr = [];//number
+        console.log(arr instanceof Array);//true
+        var bool = true;//boolean
+        console.log(bool instanceof Array);//false
+        var nll = null;//null
+        console.log(nll instanceof Array);//false
+        //2.isArray判断这个对象是不是数组。如果是数组，则返回true，如果不是数组，则返回false
+        console.log(Array.isArray(str));//false
+        console.log(Array.isArray(num));//false
+        console.log(Array.isArray(arr));//true
+        console.log(Array.isArray(bool));//false
+        console.log(Array.isArray(nll));//false
+
+    </script>
+</body>
+</html>

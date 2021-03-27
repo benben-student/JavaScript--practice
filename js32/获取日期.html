@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  
+        function getTime() {
+            var dateTime = new Date();
+            var y = dateTime.getFullYear(); // 获取年
+            var m = dateTime.getMonth() + 1; // 获取月 0-11月
+            var d = dateTime.getDate(); // 获取日
+            var week = dateTime.getDay(); // 获取星期 0-6 0为周日
+            var weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var t = dateTime.getHours(); // 获取当前小时
+            var f = dateTime.getMinutes(); // 获取当前分钟
+            var miao = dateTime.getSeconds(); // 获取当前秒
+            return  y + '年' + m + '月' + d + '日' + '\n' + t + '时' + f + '分' + miao + '秒' + '日' + weeks[week];
+        }
+        var date = getTime();
+        document.write(date);
+        console.log(date);
+         */
+
+/* 
+        function getTime() {
+            var time = new Date();
+            var y = time.getFullYear();
+            var m = time.getMonth() + 1;
+            var r = time.getDate();
+            var w = time.getDay();
+            switch (w) {
+                case 1:
+                    w = '星期一';
+                    break;
+                case 2:
+                    w = '星期二';
+                    break;
+                case 3:
+                    w = '星期三';
+                    break;
+                case 4:
+                    w = '星期四';
+                    break;
+                case 5:
+                    w = '星期五';
+                    break;
+                case 6:
+                    w = '星期六';
+                    break;
+                case 0:
+                    w = '星期日';
+                    break;
+            }
+            var s = time.getHours();
+            var fen = time.getMinutes();
+            var miao = time.getSeconds();
+            return  y + '年' + m + '月' + r + '日' + '\n' + s + '时' + fen + '分' + miao + '秒' + '日' + w;
+        }
+        var date = getTime();
+        document.write(date);
+        console.log(date) */
+
+
+
+
+        var date = +new Date();
+        console.log(date);
+        
+    </script>
+</body>
+
+</html>

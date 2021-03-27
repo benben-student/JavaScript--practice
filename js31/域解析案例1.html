@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //第一题
+        f();//3 3 3
+        function f() {
+            console.log("1");
+        }
+        f();
+        function f() {
+            console.log("2");
+        }
+        f();
+        function f() {
+            console.log("3");
+        }
+        //如果是function，会声明加定义，会把整个function提升到代码之前
+        //伪代码:
+        // function f() {
+        //     console.log("1");
+        // }
+        // function f() {
+        //     console.log("2");
+        // }
+        // function f() {
+        //     console.log("3");
+        // }//覆盖之前的函数
+        // f();//3
+        // f();//3
+        // f();//3
+
+        // 第二题
+        console.log(a);//undefined
+        var a = 123;
+        console.log(a);//123
+        function f1() {
+            console.log(a);//undefined
+            var a = 456;
+            console.log(a);//456
+        }
+        f1();
+        console.log(a);//123
+
+        //如果是带var，浏览器会提前声明;var  age;只声明不赋值(默认结果是undefined未定义)
+        //伪代码：
+        // var a;//声明变量未赋值
+        // console.log(a);//undefined
+        // a = 123;
+        // console.log(a);//123
+        // function f1() {
+        //     var a;//声明变量未赋值
+        //     console.log(a);//undefined
+        //     var a = 456;
+        //     console.log(a);//456
+        // }
+        // f1();
+        // console.log(a);//全局变量123
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        作用域：
+        分为全局作用域和局部作用域(私有作用域)。
+        全局作用域：网页一打开就形成了一个全局作用域(函数外部都称为全局作用域)
+        局部作用域：函数一执行就形成了一个局部作用域(又称私有作用域)
+        全局变量：全局作用域下面定义的变量称全局变量(函数外定义的变量)
+        局部变量：局部作用域下面定义的变量称局部变量(函数内定义的变量)
+
+        *****重点：形参也是局部变量
+        */
+        //举例
+        var num = 10;//全局变量-函数外部
+        function fun() {
+            var num = 20;
+            return num;//20-局部变量
+        }
+        var result = fun();
+        console.log(result);//20-局部变量
+        console.log(num);//10-全局变量
+    </script>
+</body>
+
+</html>

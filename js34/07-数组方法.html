@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //.slice(n,m)：从n开始获取到索引m，不包括m，返回值是获取到的元素组成的新数组
+        var arr1 = [1,2,3,4,5,6];
+        var temp = arr1.slice(2,5);//从索引为2的位置开始，不包括索引5(即6)---3 4 5
+        console.log(temp,arr1);
+
+        //.splice(n,m,x/y/z)：数组从索引从n开始删除m个元素，用x/y/z替换删除的m项，返回值是删除的m项的新数组
+        var arr2 = [1,2,3,4,5,6,7];
+        var temp2 = arr2.splice(2,3,8,9,10);//从索引为2的位置开始(即3开始)，删除 3 4 5，用8 9 10替换3 4 5  //arr2 = [1,2,8,9,10,6,7]
+        console.log(temp2,arr2);//3 4 5
+        //当m项为0时，把x/y/z...替换项放到索引n之前，即添加
+        var arr3 = [1,2,3,4,5,6,7,8];
+        var temp3 = arr3.splice(2,0,9,10,11);//从索引为2的位置开始(即3开始)，将9 10 11替换项放到3之前即可(即添加)   1 2 9 10 11 3 4 5 6 7 8 
+        console.log(temp3,arr3);
+        //当没有x/y/z...替换项时，代表删除数组元素
+        var arr4 = [1,2,3,4,5,6];
+        var temp4 = arr4.splice(2,2);//从索引为2的位置开始(即3开始) 删除两个数组元素，界即3 4，arr4 = [1,2,5,6]
+        console.log(temp4,arr4);//删除3 4
+        //当splice()中什么都不写，代表没有对数组做任何操作，返回的是一个空数组
+        var arr5 = [1,2,3,4,5];
+        var temp5 = arr5.splice();
+        console.log(temp5,arr5);//空数组
+        //当splice()中为0时，代表删除数组
+        var arr6 = [1,2,3,4,5,6];
+        var temp6 = arr6.splice(0);
+        console.log(temp6,arr6);//[]空数组
+
+
+
+
+    </script>
+</body>
+</html>

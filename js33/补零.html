@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getTime(dt) { // 形参 dt
+            var y = dt.getFullYear();  // 年
+            var m = dt.getMonth() + 1; // 月
+            var d = dt.getDate(); // 日
+            var hour = dt.getHours(); // 时
+            var minute = dt.getMinutes(); // 分 
+            var second = dt.getSeconds(); // 秒
+            var week = dt.getDay(); // 周
+            var weeks = ['日', '一', '二', '三', '四', '五', '六'];
+            // 利用三元 进行补 '0' 
+            m = m < 10 ? '0' + m : m;
+            d = d < 10 ? '0' + d : d;
+            hour = hour < 10 ? '0' + hour : hour;
+            minute = minute < 10 ? '0' + minute : minute;
+            second = second < 10 ? '0' + second : second;
+            // 返回结果
+            return y + '年' + m + '月' + d + '日' + '\t' + hour + '点' + minute + '分' + second + '秒' + '\t' + '星期' + weeks[week];
+        }
+        var result = getTime(new Date); // 设置实参省略变量
+        console.log(result);
+    </script>
+</body>
+
+</html>

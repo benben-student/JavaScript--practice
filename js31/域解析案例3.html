@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第六题
+        console.log(a);//undefined
+        var a = 12;
+        function fn() {
+            console.log(a);//12
+            a = 13;
+        }
+        fn();
+        console.log(a);//13
+
+        //伪代码
+        // var a;//声明变量未赋值
+        // console.log(a);//undefined
+        // a = 12;
+        // function fn() {
+        //     console.log(a);//用全局的-12
+        //     a = 13;//修改全局为13
+        // }
+        // fn();
+        // console.log(a);//13
+
+        // 第七题：不管条件成立与否，都要进行变量提升
+        var foo = 1;
+        function bar() {
+            if (!foo) {
+                var foo = 10;
+            }
+            console.log(foo);//10
+        }
+        bar();
+
+        //伪代码：
+        // var foo = 1;
+        // function bar() {
+        //     var foo;//声明变量但未赋值-结果是undefined
+        //     if (!foo) {
+        //         //undefined的布尔值是false !false=true
+        //         foo = 10;
+        //     }
+        //     console.log(foo);//10
+        // }
+        // bar();
+
+        // 第八题
+        var n = 13;
+        function fn(n) {
+            alert(n);//13
+            var n = 14;
+            alert(n);//14
+        }
+        fn(n);
+        console.log(n);//13-全局变量
+
+        //伪代码：
+        // var n = 13;
+        // function fn(n) {
+        //     //形参接收实参，n=13
+        //     alert(n);//13
+        //     var n = 14;
+        //     alert(n);//14
+        // }
+        // fn(n);//实参是变量，n=13
+        // console.log(n);//13-全局变量
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        js块级作用域：全局作用域、函数作用域，没有块级作用域这一概念
+        js块级作用域：大括号里的可以看成一块，如果是块级作用域，那么在{}里定义的变量和参数外面是访问不到的
+        ES6有块级作用域这一概念
+        */
+       {
+           var num1;
+       }
+       console.log(num1);//可以访问，不具备块级作用域
+
+       if(true){
+           var num2 = 100;
+       }
+       console.log(num2);//可以访问，不具备块级作用域
+
+       for(var i = 0; i < 10; i++){
+           var age = 18;
+       }
+       console.log(age);////可以访问，不具备块级作用域
+
+       //考点
+       function fun(){
+           var num3 = 20;//局部变量，外面访问不到
+       }
+       console.log(num3);
+
+       //ES6
+       {
+           let num4 = 20;
+       }
+       console.log(num4);
+    </script>
+</body>
+</html>
