@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='box'>
+
+    </div>
+    <script>
+        function getColor() {
+            var str = '#';
+            var num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+            for (i = 0; i < 6; i++) {
+                var result = parseInt(Math.random() * num.length);
+                str += num[result];
+            }
+            return str;
+        }
+        var re = getColor();
+        window.onload = function() {
+            document.getElementById('box').style.backgroundColor = re;
+        }
+        // 封装斐波那契
+        /*
+        function Fib(num) {
+            var num1 = 1;
+            var num2 = 1;
+            var sum = 0;
+            for (var i = 3; i <= num; i++) {
+                sum = num1 + num2;
+                num1 = num2;
+                num2 = sum;
+            }
+            return sum;
+        }
+        var result = Fib(12);
+        console.log(result);
+         */
+        // 判断天数
+        /*
+        function getDay(year, month, day) {
+            var sum = day;
+            if (month == 1) {
+                return day;
+            }
+            var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            for (var i = 0; i <= month - 1; i++) {
+                sum += months[i];
+            }
+            if ((year % 4 == 0 && year % 100 != 0 || year % 400 == 0) && month >2) {
+                sum++;
+            }
+            return sum;
+        }
+        var result = getDay(2021,3,28);
+        document.write(result);
+         */
+
+
+        /*
+            一. 出现undefined 的三种情况
+                1. 声明变量未赋值
+                2. 函数没有返回值
+                3. 函数有返回值return 后没有跟内容
+            二. arguments
+                当不确定有多少实参传递时用arguments 但arguments是伪数组 不具备数组push pop 等方法
+            三. 函数声明方法
+                1. 命名函数 function fu() {
+
+                }
+                2. 匿名函数 var fun = function() {
+
+                };
+            四. 自调用函数
+                (function(){
+
+                })();
+            五. this指向
+                1.在全局下this指向window
+                2.在普通函数下this指向window
+            六. 作用域
+                js分为 1.全局作用域 2.局部作用域(函数作用域)(私有作用域)
+                js没有块级作用域 es6有 let
+            七. 预解析
+                游览器在执行时会把 var function 提到当前作用域最前面
+            八. 数学对象 Math
+                Math.PI 圆周率
+                Math.random() 随机数 [0,1) 浮点数
+                Math.abs() 绝对值
+                Math.floor() 向下取整
+                Math.ceil() 向上取整
+                Math.round() 四舍五入
+                Math.max() 最大值
+                Math.min() 最小值
+                Math.sqrt() 平方根
+                Math.pow() 指数幂
+            九. 日期对象 new Date
+                var dt = new Date();
+                dt.getFullYear() 获取年
+                dt.getMonth()+1 获取月 0 - 11
+                dt.getDate() 获取日
+                dt.getHours() 获取小时
+                dt.getMinutes() 获取分钟
+                dt.getSeconds() 获取秒
+                dt.getDay() 获取星期 0 - 6 0为周日
+            十. 数组对象
+                01. length 获取数组长度
+                02. charAt(索引) 返回索引位置字符 超出返回空字符
+                03. fromCharCode(数字。。。) ASCII 编码
+                04. conCat(字符串1，..) 返回拼接后的新字符串
+                05. indexOf(查找的字符串，什么位置开始)  没找到返回-1 找到显示索引位置
+                06. lastIndexOf() 从右往左查找 索引位置还是从左往右
+                07. replace('原来的字符串','新的字符串') 替换字符串
+                08. silce(开始索引 结束索引) 包前不包后 返回截取的字符串、
+                09. split(以什么符号拆分 拆分后留下的字符串) 拆分字符串 返回数组
+                10. substr(开始的索引位置 个数) 返回截取后的新字符串 个数可以忽略
+                11. substring(开始索引 结束索引) 与silce相同
+                12. toLocaleLowerCase  转换为小写
+                    toLowerCase
+                13. toLocaleUpperCase 转换为大写
+                    toUpperCase
+                14. trim() 删除字符串两端空格
+            十一. 数组
+                push(值1,值2,...) 在字符串后面添加字符 返回值是追加后数组长度
+                unshift(值1,值2,...) 在字符串前面添加字符 返回值是追加后数组长度
+                pop() 删除数组最后一项 返回值是删除的字符
+                shift() 删除数组第一项 返回值是删除的字符
+                .reverse() 反转数组 返回值是反转后的数组
+                .sort() 排序 不加参数只能0-10；
+                    arr.sotr(function(a,b){
+                        retrun a - b; 从小到大排序
+                        retrun b - a; 从大到小排序
+                    })
+            十二. 判断数组方法
+                    1. instanceof
+                        arr instanceof Array
+                        数组返回 true 非数组返回 false
+                    2. isArray
+                        Array.isArray(arr)
+            十三. 数组方法
+                1. selice(n,m) 索引n到m [n,m) 返回值是获取n到m的新数组
+                2. splice(n,m,x/y/z) 从n开始删除m个元素 用x/y/z替换删除的m项 返回值是删除的m项的新数组
+                    (1) m = 0 时 是添加 把x/y/z添加到n前
+                    (2) 不写x/y/z时 是删除
+                    (3) splice() 不做任何操作 返回空数组
+                    (4) splice(0) 时 全部删除 返回值是删除前的数组
+        */
+    </script>
+</body>
+
+</html>

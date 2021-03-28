@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            width: 750px;
+            height: 140px;
+            margin: 100px auto;
+        }
+
+        .box ul {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            list-style: none;
+        }
+
+        .box ul li {
+            float: left;
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            margin: 5px;
+            cursor: pointer;
+            background-color: rgb(29, 82, 82);
+        }
+    </style>
+    <script>
+        function fu1() {
+            document.getElementById('pic').src = '02.jpg';
+        }
+        function fu2() {
+            document.getElementById('pic').src = '01.jpg';
+        }
+        /*
+            点击 onclick
+            双击 ondblclick
+            鼠标经过 onmouseover
+            鼠标离开 onmouseout
+        */
+        /* 
+            事件三要素
+            1.事件源
+            2.用户的操作
+            3.事件处理程序
+        */
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <img src="./01.jpg" alt="" id="pic">
+        <ul>
+            <li onclick="fu2()">1</li>
+            <li onclick="fu1()">2</li>
+        </ul>
+    </div>
+</body>
+
+</html>
