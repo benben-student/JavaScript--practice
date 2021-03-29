@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        四个常用事件：
+        1.点击事件onclick();
+        2.鼠标划上事件onmouseover();
+        3.鼠标离开事件onmouseout();
+        4.双击事件ondblclick();
+         */
+         function dj(){
+             alert("点击事件");
+         }
+         function sj(){
+             alert("双击事件");
+         }
+         function over(){
+             alert("鼠标划上事件");
+         }
+         function leave(){
+             alert("鼠标离开事件");
+         }
+    </script>
+    <button onclick="dj()">点击</button>
+    <button ondblclick="sj()">双击</button>
+    <button onmouseover="over()">鼠标划上</button>
+    <button onmouseout="leave()">鼠标离开</button>
+    <hr>
+    <input type="button" value="点击" onclick="dj()">
+    <input type="button" value="双击" ondblclick="sj()">
+    <input type="button" value="鼠标划上" onmouseover="over()">
+    <input type="button" value="鼠标离开" onmouseout="leave()">
+</body>
+</html>

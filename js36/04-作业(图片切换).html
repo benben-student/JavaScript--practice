@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .box {
+            width: 750px;
+            /*盒子大小就是图片大小*/
+            height: 147px;
+            position: relative;
+            /*父级：相对定位*/
+        }
+
+        .box ul {
+            position: absolute;
+            /*子级：绝对定位-相对于父级*/
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .box ul li {
+            float: left;
+            line-height: 15px;
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            /*不要写a标签(a标签会跳转到其他页面)*/
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //事件处理程序
+        function fun2() {
+            document.getElementById("pic").src = "./images/02.jpg";
+        }
+        function fun1() {
+            document.getElementById("pic").src = "./images/01.jpg";
+        }
+    </script>
+    <div class="box">
+        <img src="./images/01.jpg" alt="" id="pic">
+        <ul>
+            <!-- 轮播图中不要写a标签(a标签会跳转到其他页面) -->
+            <!-- 事件：用户操作-单击事件 -->
+            <li onclick="fun1()">1</li>
+            <li onclick="fun2()">2</li>
+        </ul>
+    </div>
+</body>
+<!-- 
+    原理：
+    事件三要素：
+    1.事件源：被触发的对象 举例：比如第二个li就是事件源(被触发的对象)
+    2.事件：用户操作 举例：比如单击事件onclick()、鼠标划过事件onmouseover()、鼠标离开事件onmouseout()、双击事件ondblclick()...
+    3.事件处理程序：事件触发后要执行的代码 举例：比如切换图片
+ -->
+
+</html>

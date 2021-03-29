@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        一，实参和形参个数不一致问题
+        1.实参个数大于形参个数，则剩余实参被丢弃
+        function fun(x,y){
+            return x + y;
+        }
+        var result = fun(1,2,3);//3 实参3被丢弃
+        console.log(result);
+        2.实参个数小于形参个数，则结果是NaN
+        function fun(x,y,z){
+            return x + y + z;
+        }
+        var result = fun(1,2);
+        console.log(result);
+        二，undefined归类
+        1.声明变量但未赋值，结果是undefined 
+        var age;
+        2.函数没有返回值，在调用时接收了函数，结果是undefined
+        function fun(x,y){
+            var  sum = x + y;
+        }
+        var result = fun(1,2);
+        console.log(result);
+        3.函数有返回值return，但return后没有内容，则结果是undefined
+        function fun(x,y){
+            var sum = x + y;
+            return;
+        }
+        var result = fun(1,2);
+        console.log(result);
+        注意：return后的代码都不执行
+        三，案例(数组反转、冒泡排序、阶乘...)
+        四，函数自调用
+        (function(){})()
+        五，斐波那契数列-经典算法
+        function getFeiBo(num){
+             var num1 = 1;
+             var num2 = 1;
+             var sum = 0;
+             for(var i = 3; i <= num; i++){
+                 sum = num1 + num2;
+                 num1 = num2;
+                 num2 = sum;
+             }
+             return sum;
+         }
+         var result = getFeiBo(12);
+         console.log(result);//144
+         六，伪数组arguments：可以获取用户传递的参数(不知用户传递几个参数)
+         优势：用了arguments伪数组，就不需要写形参了
+         七，作用域
+         全局作用域：网页一打开就形成了一个全局作用域(函数外的作用域)
+         局部作用域：函数一执行就形成了一个局部作用域
+         全局变量：在全局作用域下定义的变量叫全局变量(函数外定义的变量)
+         局部变量：在局部作用域下定义的变量叫局部变量(函数内定义的变量)
+         *****形参是局部变量
+         八，this指向
+         1.在全局作用域下,this指向window
+        console.log(this);
+         2.普通函数中,this指向window
+        function fun(){
+            console.log(this);
+        }
+        fun();
+        九，块级作用域
+        js没有块级作用域，有全局作用域和函数作用域
+        ES6有块级作用域
+        什么是块级作用域？一对大括号就可以看成一块 如果有块级作用域，那么在{}里定义的变量在大括号外面都访问不到
+        十，作用域链：由内往外查找，这种查找机制就是作用域链-由局部一层一层往外查找
+        十一，预解析(变量提升)
+        当网页一打开，首先浏览器会读一遍代码，会把带var和function提升到代码前面
+        1.如果带var，则浏览器会提前声明，不会赋值，结果是undefined
+        2.如果带function，浏览器会声明+定义，会将整个function提到代码之前
+        3.变量提升只会提升等号左侧的
+        预解析案例...
+        十二，内置对象
+        Math
+        1.Math.random()随机数---浮点数-小数 0-1 [0,1)---*****
+        2.Math.max()最大值---*****
+        3.Math.min()最小值---*****
+        4.Math.abs()绝对值
+        5.Math.pow()求几次幂
+        6.Math.sqrt()开平方根
+        7.Math.round()四舍五入
+        8.Math.ceil()向上取整
+        9.Math.floor()向下取整
+        10.Math.PI圆周率
+        Date
+        var dt = new Date;
+         //年
+         var year = dt.getFullYear();
+         //月-注意：月份从0开始，需要加1
+         var month = dt.getMonth() + 1;
+         //日
+         var day = getDate();
+         //时
+         var hour = getHours();
+         //分
+         var minute = getMinutes();
+         //秒
+         var second = getSecnds();
+         //星期几-注意：星期日用0表示
+         var week = getDay();
+
+         函数版日期 随机颜色 DOM操作
+         十三，js入口函数
+         window.onload = function(){
+             //匿名函数
+              document.getElementById("dv").style.backgroundColor = 函数名();
+              document文档
+              get获取
+              Element元素
+              By通过
+              Id选择器
+              . 相当于中文的“的”
+              通过id获取元素
+         }
+         十四,String内置对象
+         .length获取字符串长度
+         .charAt(索引)返回的是指定索引位置的字符串。如果超出，则返回空字符串
+         .fromCharCode(数值,可以是多个数值)返回的是ASCII码对应的值
+         .concat(字符串1,字符串2,...)返回拼接后的字符串
+         .indexOf(查找的字符串,从某个位置开始)返回的是这个字符串的索引位置 若没有找到则返回-1，若找到了，则返回字符串索引位置(从前往后找)
+         .lastIndexOf(查找的字符串)从后往前查找 但索引位置还是从前往后查找
+         .replace(原来字符串,新字符串)返回的是替换后组成的新的字符串
+         .slice(开始索引,结束索引) 包含开始索引，不包含结束索引
+         .splice(以什么字符串拆分,拆份后留下字符串的个数)返回的是数组
+         .substr(开始索引,个数)返回的是截取后的字符串
+         .substring(开始索引,结束索引)返回截取后的新字符串 不包含结束索引
+
+         .toLocaleLowerCase()小写
+         .toLowerCase()小写
+         .toLocaleUpperCase()大写
+         .toUpperCase()大写
+         .trim()删除两端多余空格，中间空格不会删除
+         十五，创建数组的方法
+         1.字面量创建数组var arr = [1,2,3,4];
+         2.内置构造函数创建数组var array = new Array(1,2,3);
+         两种方法几乎没有区别
+         只有一种情况有区别：
+         只有一个参数时，二者结果不一样
+         假设有一个参数5
+          字面量创建数组
+          var arr = [5];
+          console.log(arr);//[5]
+          内置构造函数创建数组
+          var array = new Array(5);
+          console.log(array);//(5) [empty × 5]
+          十六，判断数组的方法
+          1.instanceof判断一个对象是不是数组，如果是数组，则返回true，如果不是，则返回false
+          2.isArray判断一个对象是不是数组，如果是数组，则返回true，如果不是，则返回false
+          十七，数组方法
+          1. .push()在数组后添加数组元素，返回的是追加的数组长度
+          2. .unshift()在数组前添加数组元素，返回的是追加的数组长度
+          3. .pop()删除数组最后一项，返回的是删除的那一项
+          4. .shift()删除数组第一项，返回的是删除的那一项
+          5. 数组反转 .reverse()返回的是反转后的数组
+          6. 冒泡排序 .sort()数组排序
+          如果没有参数，则只能排10以内的数字
+          若超过10或任意数字，则需要传递一个回调函数
+          7. .slice(n,m)从索引n开始截取索引m，不包含m，返回的是获取到的元素组成的新数组
+          8. .splice()增删改操作
+          .splice(n,m,x/y/z...)把数组从索引n开始删除，删除m个元素，用x/y/z...替换删除项，返回值是删除m项的新数组---替换 修改
+          当m项是0时，就是把替换项x/y/z替换到n前面---添加
+          当不写x/y/z...替换项时---删除数组元素
+          当splice()里面什么都没有时，代表对数组没有做任何操作
+          
+         */
+
+
+        var str = "Hello World";
+        console.log(str.length);//11
+        console.log(str.charAt(4));//o
+        console.log(str.charAt(12));//空
+        var str2 = String.fromCharCode(83,79,83);//sos
+        console.log(str2);
+        console.log(str.concat("你好"));//hello world你好
+        console.log(str.indexOf("l",3));//从前到后，找到字母l
+        console.log(str.lastIndexOf("l"));//9
+        console.log(str.replace("o","a"));//只替换一个 hella world
+        console.log(str.slice(1,4));//ell 1-e 2-l 3-l 4-o  不包含结束索引为4的位置
+        console.log(str.split("l",4));//he "" o wor d
+        console.log(str.substr(2,3));//llo
+        console.log(str.substring(2,3));//l 不包含结束索引为3的位置
+        console.log(str.toLocaleUpperCase());
+        console.log(str.toLocaleLowerCase());
+        var str3 = "  hello world  ";
+        console.log(str3.trim());
+
+        var str = "hellow world";
+        console.log(str instanceof Array);//false
+        var arr = [];
+        console.log(arr instanceof Array);//true
+        console.log(Array.isArray(str));//false
+        console.log(Array.isArray(arr));//true
+
+        var arr1 = [1,2,3,4];
+        console.log(arr1.push(5,6,7,8,9),arr1);//9   1 2 3 4 5 6 7 8 9
+        var arr2 = [1,2,3,4];
+        console.log(arr2.unshift(5,6,7,8,9),arr2);//9   5 6 7 8 9 1 2 3 4
+        var arr3 = [1,2,3,4];
+        console.log(arr3.pop(),arr3);//4   1 2 3
+        var arr4 = [1,2,3,4];
+        console.log(arr4.shift(),arr4);//1   2 3 4
+        console.log(arr4.reverse());//4 3 2
+        console.log(arr4.sort());//2 3 4
+
+        var arr5 = [1,3,4,6,7,10,100,300];
+        var temp = arr5.sort(function(a,b){
+            return a - b;//从小到大
+            // return b - a;//从大到小
+        })
+        console.log(temp);
+
+
+        var string = "hello world";
+        console.log(string.slice(2,4));//不包含结束索引4的位置 ll
+
+        var arr1 = [10,20,30,40,50,60];
+        var temp1 = arr1.splice(2,2,7,8,9);//从索引为2的位置(即30)开始删除两项(即30 40) 替换项为7 8 9替换30 和 40两个元素 
+        console.log(temp1);//30 40 返回值是删除的2项
+        console.log(arr1);//10 20 7 8 9 50 60
+
+        var arr2 = [1,2,3,4,5];
+        var temp2 = arr2.splice(2,0,7,8,9);
+        console.log(temp2);//空
+        console.log(arr2);//1 2 7 8 9 3 4 5
+
+        var arr3 = [1,2,3,4,5];
+        console.log(arr3.splice(2,3));//3 4 5
+        console.log(arr3);//1 2
+
+
+        console.log(arr3.splice(),arr3); 
+
+
+        console.log(arr3.splice(0),arr3);//原来数组的数据 1 2 原数组变为空
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
