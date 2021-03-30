@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点击更改" id="btn">
+    <div id="box">
+        <p>欧阳奎元</p>
+        <p>欧阳奎元</p>
+        <p>欧阳奎元</p>
+        <p>欧阳奎元</p>
+        <p>欧阳奎元</p>
+    </div>
+    <p>欧阳奎元</p>
+    <p>欧阳奎元</p>
+    <p>欧阳奎元</p>
+    <p>欧阳奎元</p>
+    <p>欧阳奎元</p>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            var pObjs = document.getElementById('box').getElementsByTagName('p');
+            for (var i = 0; i < pObjs.length; i++) {
+                pObjs[i].innerText = 'niuod';
+            }
+        }
+        /*
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            var pObjs = document.getElementsByTagName('p');
+            for (var i = 0; i <= pObjs.length; i++) {
+                pObjs[i].innerText = '欧阳奎元是大王八';
+            }
+        }
+         */
+        /* var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            var pObjs = document.getElementsByTagName('p');
+            for (var i = 0; i <= pObjs.length; i++) {
+                pObjs[i].innerText = '大傻子';
+            }
+        } */
+
+
+    </script>
+</body>
+
+</html>

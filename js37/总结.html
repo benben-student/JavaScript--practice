@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            onclick 点击
+            onmouseover 鼠标经过 
+            onmouseout 鼠标离开
+            ondblclick 双击
+            onclick
+            ondblclick
+            onmouseover onmouseover onmouseout onmouseover onmouseout onmouseover onmouseout
+            onclick ondblclick onmouseover onmouseout onclick ocdblclick onmouseover onmouseout
+            onmouseout
+            innerText 修改或者获取一对标签里面的内容
+            document.getElementsByTagName(); 是一个集合(伪数组) 需要循环输出for
+        */
+        // 事件三要数
+        /* 
+            1.事件源
+            2.用户操作
+            3.事件处理程序
+        */
+        /* 
+            1. length 获取数组长度
+            2. charAt(索引) 返回对应下标索引值
+            3. fromCharCode() ASCII编码
+            4. indexOf('要查找字符','索引位置') 没找到显示-1 找到返回索引位置
+            5. lastIndexOf() 从后往前查找索引还是从前往后
+            6. concat(字符串1，字符串2) 拼接字符串
+            7. replace('原来的字符串','新的字符串') 用来替换字符串
+            8. slice(开始索引 结束索引) 包前不包后 返回截取的字符串
+            9. split(以什么拆分 拆分后留下的个数) 拆分字符串
+            10. substr(开的的位置 个数) 返回截取后的字符串
+            11. substring(开始索引 结束索引) 与slice相同
+            12. toLocaleLowerCase toLowerCase 转小写
+            13. toLocaleUpperCase toUpperCase 转大写
+            14. trim 删除两端空格
+        */
+        /* 
+            数组方法
+            push() 在数组后添加 返回值是追加后的数组长度
+            unshift() 在数组前添加 返回值是追加后的数组长度
+            pop() 删除数组最后一个 返回值是删除的元素
+            shift() 删除第一个 返回值是删除的元素
+            reverse() 反转数组
+            sort() 排序 不添加参数时 只能排0-10 
+            例：arr.sort(function(a,b) {
+                retrun a - b;从小到大
+                retrun b = a;从大到小
+            })
+            slice(n,m) 索引n到m项 返回值是获取到的元素组成的新数组
+            splice(n,m,x/y/z) 从第n个开始删除m个 用x/y/z/替换删除的m项 返回值是删除的m项的新数组
+            当m项是0时 表示添加 把x/y/z添加到n的前面
+            当m项不写时 表示删除
+            当splice()时 不写 返回空数组
+            当splice(0)时 全删
+
+         */
+    </script>
+</body> 
+</html>

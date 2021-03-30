@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <p id="p1">我是一个p标签</p>
+    <script>
+        var btn = document.getElementById('btn');
+        var p1 = document.getElementById('p1');
+        btn.onclick = function () {
+            // alert('我点击了一下'); // 测试用
+            p1.innerText = '更改了p的内容'; 
+        }
+    </script>
+</body>
+</html>

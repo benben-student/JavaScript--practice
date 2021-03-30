@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="点击显示" id="btn">
+    <input type="button" value="点击隐藏" id="btn1">
+    <input type="button" value="点击更换颜色" id="btn2">
+    <div id="box"> </div>
+
+    <script>
+        // 封装随机16进制颜色
+        function getColor() {
+            var str = '#';
+            var cols = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+            for (var i = 0; i < 6; i++) {
+                var suiji = parseInt(Math.random() * cols.length);
+                str += cols[suiji];
+            }
+            return str;
+        }
+        var box = document.getElementById('box');
+        var btn = document.getElementById('btn');
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        // 实现点击显示div盒子
+        btn.onclick = function () {
+            box.style.display = 'block';
+        }
+        // 实现点击隐藏div盒子
+        btn1.onclick = function () {
+            box.style.display = 'none';
+        }
+        // 实现点击更换div盒子颜色
+        btn2.onclick = function () {
+            box.style.backgroundColor = getColor();
+        }
+    </script>
+</body>
+
+</html>

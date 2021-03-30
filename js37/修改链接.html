@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    https://www.jiumodiary.com/
+    http://www.zztion.com/
+    -->
+    <a href="https://www.jiumodiary.com/" id="ax">鸠摩搜书</a>
+    <button id="btn">点击修改</button>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            var ax = document.getElementById('ax');
+            ax.href = "http://www.zztion.com/";
+            ax.innerText = '中职通';
+        }
+    </script>
+</body>
+</html>
