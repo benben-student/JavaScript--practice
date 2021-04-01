@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/liuyan.jpg" id="im" width="400" height="600">
+    <script>
+        var im = document.getElementById("im");
+        im.onclick = function(){
+            // im.width = "200";//注意不要加单位px 为什么？
+            // im.height = "300";
+            //优化
+            this.width = "200";
+            this.height = "300";
+            //this-表示自身
+            //this看点.---点前面是谁this就指向谁
+            
+
+        }
+</script>
+</body>
+</html>

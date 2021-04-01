@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="隔行变色"/>
+		<ul>
+			<li>亚索</li>
+			<li>娑娜</li>
+			<li>盖伦</li>
+			<li>维克兹</li>
+			<li>贾克斯</li>
+			<li>亚索</li>
+			<li>娑娜</li>
+			<li>盖伦</li>
+			<li>维克兹</li>
+			<li>贾克斯</li>
+		</ul>
+	</body>
+	<script src="js/myQuery.js"></script>
+	<script> 
+		var Li=document.getElementsByTagName("li");
+		my$("btn").onclick=function(){
+			for(var i=0;i<Li.length;i++){
+				Li[i].style.backgroundColor= i%2==0 ? "#ffff00" : "#ff5500";
+			}
+		}
+	</script>
+</html>

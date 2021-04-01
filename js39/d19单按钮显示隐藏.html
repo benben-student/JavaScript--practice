@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div img{
+				width: 600px;
+				height: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="隐藏"/>
+		<div id="dv">
+			<img src="img/h9.jpg" />
+		</div>
+	</body>
+	<script src="js/myQuery.js"></script>
+	<script>
+		var count=0;
+		my$("btn").onclick=function(){
+			if(count%2==0){
+				my$("dv").style.display="none";
+				this.value="显示";
+			}else{
+				my$("dv").style.display="block";
+				this.value="隐藏";
+			}
+			count++;
+		}
+	</script>
+</html>

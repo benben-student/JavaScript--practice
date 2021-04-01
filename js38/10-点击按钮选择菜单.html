@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="选择菜单">
+    <select name="country">
+        <option value="油炸榴莲">油炸榴莲</option>
+        <option value="青椒炒鸡蛋" id="egg" selected>青椒炒鸡蛋</option>
+        <option value="西红柿炒番茄">西红柿炒番茄</option>
+    </select>
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var egg = document.getElementById("egg");
+            egg.selected = true;
+        }
+    </script>
+</body>
+</html>

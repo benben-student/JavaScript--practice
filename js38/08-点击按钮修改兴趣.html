@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="选择爱好" id="btn">
+    <input type="checkbox" name="like" id="sing">唱歌
+    <input type="checkbox" name="like" id="dance">跳舞
+    <input type="checkbox" name="like" id="rap">rap
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            document.getElementById("sing").checked = true;
+            document.getElementById("dance").checked = true;
+        }//推荐使用checked = true
+
+    </script>
+</body>
+</html>

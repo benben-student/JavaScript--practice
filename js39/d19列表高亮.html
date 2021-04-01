@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			ul li{
+				list-style: none;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>亚索</li>
+			<li>娑娜</li>
+			<li>盖伦</li>
+			<li>维克兹</li>
+			<li>贾克斯</li>
+			<li>亚索</li>
+			<li>娑娜</li>
+			<li>盖伦</li>
+			<li>维克兹</li>
+			<li>贾克斯</li>
+		</ul>
+	</body>
+	<script>
+		var Li=document.getElementsByTagName("li");
+		for(var i=0;i<Li.length;i++){
+			Li[i].onmouseenter=function(){
+				this.style.backgroundColor="#ff5500";
+			}
+			Li[i].onmouseleave=function(){
+				this.style.backgroundColor="#ffffff";
+			}
+		}
+	</script>
+</html>

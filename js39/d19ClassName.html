@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				width: 600px;
+				height: 400px;
+				background-color: #00ff00;
+			}
+			.cls{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="隐藏"/>
+		<div id="dv"></div>
+	</body>
+	<script src="js/myQuery.js"></script>
+	<script>
+		my$("btn").onclick=function(){
+			// console.log(my$("dv").className);//查询元素的类
+			if(my$("dv").className!="cls"){
+				my$("dv").className="cls";
+				this.value="显示";
+			}else{
+				my$("dv").className="";
+				this.value="隐藏";
+			}
+		}
+	</script>
+</html>
