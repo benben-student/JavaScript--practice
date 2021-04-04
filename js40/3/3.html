@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="修改p标签的内容" id="btn">
+    <div id="dv1">
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+        <p>我是第一组段落标签</p>
+    </div>
+
+    <div id="dv2">
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+        <p>我是第二种段落标签</p>
+    </div>
+    <script>
+        var a = document.getElementById("btn");
+        a.onclick= function(){
+            var b = document.getElementById("dv2").getElementsByTagName("p");
+            for(var i=0;i<b.length;i++){
+                b[i].innerText="scsbfbd";
+            }
+        }
+    </script>
+    
+</body>
+</html>

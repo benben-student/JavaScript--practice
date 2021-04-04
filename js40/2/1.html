@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .box{
+            width: 750px;/*图片的宽度*/
+            height: 140px;/*图片的高度*/
+            margin: 100px;
+            position: relative;/*相对定位 ---父相子绝*/
+        }
+        .box ul{
+            position: absolute;/*绝对定位*/
+            right: 10px;
+            bottom: 10px;
+        }
+        .box ul li{
+            float: left;
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            text-align: center;
+            background: hotpink;
+            margin: 5px;
+            cursor: pointer;/*小手样式，不要加a链接，a链接具有跳转到下一页。*/
+        }
+    </style>
+    <script>
+        function a(){
+            document.getElementById("pic").src="01.jpg";
+        }
+        function b (){
+            document.getElementById("pic").src="02.jpg";
+        }
+    </script>
+    
+    
+</head>
+<body>
+    <div class="box">
+        <img src="01.jpg" alt="" id="pic">
+        <ul>
+            <li onclick="a()">1</li>
+            <li onclick="b()">2</li>
+        </ul>
+    </div>
+  
+    
+</body>
+</html>
