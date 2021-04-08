@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dv">
+        <span>span</span>
+        <p>p段落</p>
+        <ul id="uu">哈哈
+            <li>卡卡西1</li>嘿嘿
+            <li id="three">卡卡西</li>呵呵
+            <li>卡卡西3</li>嘎嘎
+        </ul>
+    </div>
+    <script src="./publick.js"></script>
+    <script>
+        //前四个必须会，都是获取节点和元素的
+        var ulObj = document.getElementById("uu");
+        //父级节点
+        console.log(ulObj.parentNode);//div
+        //父级元素
+        console.log(ulObj.parentElement);//div
+        //子级节点
+        console.log(ulObj.childNodes);//7(包含文本、换行)
+        //子元素
+        console.log(ulObj.children);//3个li标签
+        //以上四个兼容所有浏览器 谷歌 火狐 IE...
+
+        //以下8个扩展-了解
+        //第一个子节点------IE8及以下是叫第一个子元素
+        console.log(ulObj.firstChild);//哈哈
+        //第一个子元素------IE8中不支持第一个子元素
+        console.log(ulObj.firstElementChild);//<li>卡卡西1</li>
+        //最后一个子节点------IE8及以下是叫第一个子节点
+        console.log(ulObj.lastChild);//嘎嘎
+        //最后一个子元素------IE8中不支持最后一个子元素
+        console.log(ulObj.lastElementChild);//<li>卡卡西3</li>
+
+
+
+        //获取某个元素的前一个兄弟节点------节点在IE8中叫做元素
+        console.log(my$("three").previousSibling);//嘿嘿
+        //获取某个元素的前一个兄弟元素------在IE8中不支持
+        console.log(my$("three").previousElementSibling);//<li>卡卡西1</li>
+        //某个元素的下一个兄弟节点
+        console.log(my$("three").nextSibling);//呵呵
+        //某个元素的下一个兄弟元素
+        console.log(my$("three").nextElementSibling);//<li>卡卡西3</li>
+
+        /*
+        总结：从第一个子节点开始，在火狐和谷歌中都是叫节点，第一个子元素在火狐和谷歌中还是叫子元素
+        但是在IE8及以下中第一个子节点，在IE8在第一个子节点，第一个子元素在IE8及以下浏览器中不支持
+
+        总结：从第一个子节点开始只要是节点在IE8及以下浏览器里叫元素
+        只要是子元素，在IE8及以下都不支持
+
+        */
+    </script>
+</body>
+</html>
