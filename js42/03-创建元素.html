@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <script src="./publick.js"></script>
+</head>
+
+<body>
+    <input type="button" value="点击创建" id="btn">
+    <div id="dv"></div>
+    <script>
+        var names = ["杨过", "郭靖", "张无忌", "张三丰", "乔峰", "段飞", "丁棚", "小龙女", "黄蓉"];
+        // my$('btn').onclick = function () {
+        //     var pObj = document.createElement('h1');
+        //     pObj.innerHTML = '牛批66666';
+        //     my$('dv').appendChild(pObj);
+        // }
+        my$('btn').onclick = function () {
+            for (var i = 0; i < names.length; i++) {
+                var nObjs = document.createElement('li');
+                nObjs.innerText = names[i];
+                my$('dv').appendChild(nObjs);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

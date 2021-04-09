@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="点击创建" id="btn">
+    <div id="dv">
+
+    </div>
+    <script src="./publick.js"></script>
+    <script>
+        var names = ["杨过", "郭靖", "张无忌", "张三丰", "乔峰", "段飞", "丁棚", "小龙女", "黄蓉"];
+        my$('btn').onclick = function () {
+            var str = '<ul>'
+            for (var i = 0; i < names.length; i++) {
+                str += '<li>' + names[i] + '</li>';
+            }
+            str += "</ul>";
+            my$('dv').innerHTML = str;
+            var list = document.getElementsByTagName('li');
+            for (var i = 0; i < list.length; i++) {
+                list[i].onmouseover = function () {
+                    this.style.backgroundColor = 'pink';
+                }
+                list[i].onmouseout = function () {
+                    this.style.backgroundColor = '';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

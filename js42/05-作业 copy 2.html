@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: indianred;
+        }
+
+        table {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            border-color: rgb(79, 179, 238);
+        }
+    </style>
+    <script src="./publick.js"></script>
+</head>
+
+<body>
+    <input type="button" value="创建表格" id="btn">
+    <div id="dv"></div>
+    <script>
+        var arr = [
+            { name: "百度", href: "http://www.baidu.com" },
+            { name: "谷歌", href: "http://www.google.com" },
+            { name: "优酷", href: "http://www.youku.com" },
+            { name: "土豆", href: "http://www.tudou.com" },
+            { name: "快播", href: "http://www.kuaibo.com" },
+            { name: "爱奇艺", href: "http://www.aiqiyi.com" }
+        ];
+        my$('btn').onclick = function () {
+            var tableObj = document.createElement('table');
+            tableObj.border = 1;
+            tableObj.cellPadding = 0;
+            tableObj.cellSpacing = 0;
+            my$('dv').appendChild(tableObj);
+            for (var i = 0; i < arr.length; i++) {
+                var tr = document.createElement('tr');
+                tableObj.appendChild(tr);
+                var td1 = document.createElement('td');
+                td1.innerText = arr[i].name;
+                tr.appendChild(td1);
+                var td2 = document.createElement('td');
+                td2.innerHTML = `<a href ="${arr[i].href}">${arr[i].name}</a>`;
+                tr.appendChild(td2);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #001;
+        }
+    </style>
+    <script src="./publick.js"></script>
+</head>
+
+<body>
+    <input type="button" value="创建表格" id="btn">
+    <div id="dv"></div>
+    <script>
+        var arr = [
+            { name: "百度", href: "http://www.baidu.com" },
+            { name: "谷歌", href: "http://www.google.com" },
+            { name: "优酷", href: "http://www.youku.com" },
+            { name: "土豆", href: "http://www.tudou.com" },
+            { name: "快播", href: "http://www.kuaibo.com" },
+            { name: "爱奇艺", href: "http://www.aiqiyi.com" }
+        ];
+        // 按钮设置点击事件
+        my$('btn').onclick = function () {
+            // 添加表格 table
+            var tableObj = document.createElement('table');
+            tableObj.border = '1';
+            tableObj.cellPadding = '0';
+            tableObj.cellSpacing = '0';
+            my$('dv').appendChild(tableObj);
+            // 循环 数组
+            for (var i = 0; i < arr.length; i++) {
+                // var dt = arr[i];
+                // 添加行 tr
+                var trObj = document.createElement('tr');
+                tableObj.appendChild(trObj);
+                // 添加第一列 td
+                var td1Obj = document.createElement('td');
+                td1Obj.innerText = arr[i].name;
+                // td1Obj.innerText = dt.name;
+                trObj.appendChild(td1Obj);
+                // 添加第二列 td
+                var td2Obj = document.createElement('td');
+                td2Obj.innerHTML = '<a href=' + arr[i].href + '>' + arr[i].name + '</a>';
+                // td2Obj.innerHTML = `<a href = "${dt.href}">${dt.name}</a>`;
+
+                trObj.appendChild(td2Obj);
+            }
+        }
+    </script>
+</body>
+
+</html>
