@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="团队协作">
+    <script src="./publick.js"></script>
+    <script>
+        //点击按钮创建事件
+        my$("btn").onclick = function(){
+            console.log("第一个事件");
+        }
+
+        my$("btn").onclick = function(){
+            console.log("第二个事件");
+        }
+
+        my$("btn").onclick = function(){
+            console.log("第三个事件");
+        }
+        //以on开头的事件缺陷：在多人合作做一个点击事件时，后面的事件会覆盖前面的事件(在工作中是不允许的)---引出第二种事件方式
+        /*
+        第二种事件方式:
+        对象.addEventListener("事件类型",事件处理函数,false);
+        */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="绑定事件">
+    <input type="button" id="btn2" value="解绑事件">
+    <script src="./publick.js"></script>
+    <script>
+        /*
+        以on开头：事件源.on事件名称 = 事件处理函数
+        */
+       //绑定事件
+       my$("btn1").onclick = function(){
+           console.log("绑定事件");
+       }
+       //解绑事件：用什么事件绑定就用什么事件解绑
+       my$("btn2").onclick = function(){
+           my$("btn1").onclick = null;//解绑事件(这只是针对于以on开头的事件而言)---解绑之后，绑定事件就不生效了
+       }
+
+       /*
+       总结：
+       1.绑定事件:事件源.on事件名称 = 事件处理函数;
+       2.解绑事件：事件源.on事件名称 = null;
+       解绑之后，绑定事件就不生效了
+       */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn1" value="绑定事件">
+    <input type="button" id="btn2" value="解绑事件">
+    <script src="./publick.js"></script>
+    <script>
+        /* 
+        第三种绑定事件：
+        语法：
+        事件源.attachEvent("带on事件类型",事件处理函数)---这里是命名函数
+        对应的第三种解绑事件：
+        事件源.detachEvent("带on事件类型",事件处理函数)---这里是命名函数
+        对应的第三种解绑事件---IE8等低版本浏览器支持，谷歌和火狐不支持
+
+        注意：解绑时必须使用命名函数
+        */
+       function f1(){
+           console.log("第一个事件");
+       }
+
+       function f2(){
+           console.log("第二个事件");
+       }
+
+       my$("btn1").attachEvent("onclick",f1);//注意这里是带on的事件类型,命名函数
+
+       my$("btn1").attachEvent("onclick",f2);
+
+       //解绑：点击第二个解绑事件按钮，对第一个按钮的第一个事件进行解绑
+       my$("btn2").onclick = function(){
+           my$("btn1").detachEvent("onclick",f1,false);
+       }
+
+       //总结(面试题)：三种绑定事件对应三种解绑事件
+    </script>
+</body>
+</html>

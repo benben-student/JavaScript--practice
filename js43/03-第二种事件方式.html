@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    事件有三种方式：
+    1.以on开头的事件，如onclick、onmouseover、onmouseout...
+    铺垫：工作中是多人合作项目，是可以多个人对同一个按钮做相同事件，多个用户可能会对一个按钮进行相同的点击事件
+    缺点：多个人对同一个按钮做相同事件，后面的事件会覆盖前面的事件---工作中不允许出现
+    2.引出第二种创建事件的方式：
+    对象.addEventListener("事件类型",事件处理函数,false)
+ -->
+<body>
+    <input type="button" id="btn" value="团队协作">
+    <script src="./publick.js"></script>
+    <script>
+        /* 
+        创建事件的方式：
+        语法：
+        1.对象.addEventListener("事件类型",事件处理函数,false);---多人合作对一个按钮做相同的事件，会同时生效
+        2.事件源.addEventListener("事件类型",事件处理函数,false);---谷歌和火狐都支持，IE8等低版本不支持
+        第一个参数：事件类型("不带on的事件类型")
+        第二个参数：事件处理函数(匿名和命名函数)
+        第三个参数：false(记住是false---涉及事件冒泡)
+        */
+       my$("btn").addEventListener("click",function(){
+           //对象.addEventListener(事件不带on,匿名函数,false)
+           console.log("第一个事件");
+       },false);
+
+       my$("btn").addEventListener("click",function(){
+           console.log("第二个事件");
+       },false);
+
+       my$("btn").addEventListener("click",function(){
+           console.log("第三个事件");
+       },false);
+    </script>
+</body>
+</html>

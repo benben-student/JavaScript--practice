@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="团队协作">
+    <script src="./publick.js"></script>
+    <script>
+        /* 
+        第三种创建事件方式：
+        语法：
+        1.对象.attachEvent("事件类型",事件处理函数)---IE8等低版本浏览器中支持(从jquery开始，框架已经把兼容问题解决了)
+        第一个参数：事件类型("带on的事件类型")
+        第二个参数：事件处理函数(匿名函数和命名函数)
+
+        */
+       my$("btn").attachEvent("onclick",function(){
+           console.log("第一个事件");
+       });
+
+
+       my$("btn").attachEvent("onclick",function(){
+           console.log("第二个事件");
+       });
+
+       my$("btn").attachEvent("onclick",function(){
+           console.log("第三个事件");
+       })
+
+       /* 
+       面试题：
+       创建事件三种方式：
+       1.以on开头的事件(如onclick、onmouseover、onmouseout...)
+       2. 对象.addEventListener("事件类型",事件处理函数,false);---注意这里事件类型不带on
+       3. 对象.addEvent("事件类型",事件处理函数);---主义这里事件类型带on
+       创建事件三种方式---引出三种解绑事件
+       */
+    </script>
+</body>
+</html>

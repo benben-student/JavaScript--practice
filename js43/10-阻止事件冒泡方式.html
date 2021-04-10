@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1 {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #dv2 {
+            width: 250px;
+            height: 150px;
+            background-color: green;
+        }
+
+        #dv3 {
+            width: 150px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3"></div>
+        </div>
+    </div>
+    <script src="./publick.js"></script>
+    <script>
+        /*
+        阻止事件冒泡方式：
+        1. e.stopPropagation();---谷歌和火狐都支持，IE8等低版本浏览器不支持
+        2. window.event.cancelBubble = true;---谷歌和火狐都不支持，IE8等低版本浏览器支持
+        */
+       my$("dv1").onclick = function(){
+           console.log(this.id);//获取自身id值
+       }
+
+       my$("dv2").onclick = function(e){
+           //这里event是默认事件对象，可以简写为e
+           console.log(this.id);
+        //    console.log(e);
+        //    console.log(arguments.length);//1
+
+        //阻止事件冒泡
+        e.stopPropagation();//有效阻止事件冒泡---谷歌和火狐支持，IE8等低版本浏览器不支持
+        // window.event.cancelBubble = true;//IE8等低版本浏览器支持,谷歌和火狐不支持
+
+       }
+
+       my$("dv3").onclick = function(e){
+           e.stopPropagation();//阻止事件冒泡---谷歌和火狐支持，IE8等低版本浏览器不支持
+        //    window.event.cancelBubble = true;//---IE8等低版本浏览器支持,谷歌和火狐不支持
+        console.dir(Object.prototype);
+       }
+
+       /*
+       总结：阻止事件冒泡
+       1. e.stopPropagation()---谷歌和火狐支持，IE8等低版本浏览器不支持
+       2.window.event.cancelBubble = true;---IE8等低版本浏览器支持,谷歌和火狐不支持
+       */
+    </script>
+</body>
+
+</html>

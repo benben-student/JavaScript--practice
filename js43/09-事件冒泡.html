@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+        #dv2{
+            width: 250px;
+            height: 150px;
+            background-color: green;
+        }
+        #dv3{
+            width: 150px;
+            height:100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3"></div>
+        </div>
+    </div>
+    <script src="./publick.js"></script>
+    <script>
+        /* 
+        事件冒泡：
+        1.一定涉及盒子嵌套，如果对里面的盒子做点击事件，外面的盒子和里面的盒子做同样的点击事件，则外面的盒子也会被触发
+        2.满足的条件：
+        (1)盒子嵌套
+        (2)每个盒子有相同的点击事件
+        */
+       my$("dv1").onclick = function(){
+           console.log(this.id);//获取自身id值
+           console.log("红色");
+       }
+
+       my$("dv2").onclick = function(){
+           console.log(this.id);//获取自身id值
+           console.log("绿色");
+       }
+
+       my$("dv3").onclick = function(){
+           console.log(this.id);//获取自身id值
+           console.log("蓝色");
+       }
+
+       //总结：典型的事件冒泡：触发里面的盒子的点击事件，外面的盒子也被出触发了
+
+       //获取body标签  document.body
+       //面试题：
+       document.body.onclick = function(){
+           console.log("看body有无触发");//由于事件冒泡，所以body被触发了---引出阻止事件冒泡
+           /*
+           阻止事件冒泡:
+           1. e.stopPropagation();---谷歌和火狐都支持，IE8等低版本浏览器不支持
+           2. window.event.cancelBubble = true;---谷歌和火狐都不支持，IE8等低版本浏览器支持(IE专有的)
+           */
+           
+       }
+    </script>
+</body>
+</html>

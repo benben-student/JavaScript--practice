@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="btn1" value="绑定事件">
+    <input type="button" id="btn2" value="解绑事件">
+    <script src="./publick.js"></script>
+    <script>
+        /* 
+        第二种绑定事件：
+        对象.addEventListener("事件类型",事件处理函数,false);---注意这里是不带on的事件类型
+        第一个参数：事件类型("不带on的事件类型")
+        第二个参数：事件处理函数(匿名函数和命名函数)
+        第三个参数：false(记住是false就可以---后面涉及事件冒泡)
+
+        对应的第二种解绑事件：
+        语法：
+        对象.removeEventListener("事件类型",事件处理函数,false);
+
+        */
+        //    my$("btn1").onclick = function(){
+        //        console.log("绑定事件");
+        //    }
+
+        //绑定事件
+        my$("btn1").addEventListener("click", function () {
+            console.log("第一个绑定事件");
+        }, false);
+
+        my$("btn2").addEventListener("click", function () {
+            console.log("第二个绑定事件");
+        }, false);
+
+       //解绑事件：当点击第二个解绑事件的按钮时，对第一个按钮的第一个事件进行解绑
+       my$("btn2").onclick = function(){
+           my$("btn1").removeEventListener("click",function(){
+               console.log("解绑事件")
+           },false);
+       }
+
+       //解绑事件未生效？？？如何解决？
+
+    </script>
+</body>
+
+</html>
