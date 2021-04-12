@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>你好</li>
+        <li>你好</li>
+        <li>你好</li>
+        <li>你好</li>
+        <li>你好</li>
+    </ul>
+    <script src="./publick.js"></script>
+    <script>
+        /* 
+        事件委托：又叫事件代理---这是事件冒泡的应用
+
+         */
+        my$("ul").onclick = function(e){
+            // console.log(this);//获取到ul标签
+            // console.log(e.target);//e.target-找到了真正的目标，即li标签
+
+            var target = e.target;
+            target.style.backgroundColor = "red";
+
+            //核心思想：把事件委托给ul父级，通过e.target找到真正的目标li，这种实现过程叫事件委托(事件代理)
+        }
+    </script>
+</body>
+</html>

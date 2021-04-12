@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        一，修改
+        1.innerText：如果想要获取里面的内容，推荐使用innerText
+        2.innerHTML：如果获取里面的内容或标签，推荐使用innerHTML
+        二，Tab栏(熟记，倒背如流)
+        文档document
+        元素element(元素就是标签)
+        三，节点(node)：页面中所有内容都叫节点
+        节点包含元素(标签)、文本[文字、换行、回车、空格、属性(如id和class)]
+        必须记住：
+        1.nodeType:节点类型
+        1代表标签节点
+        2代表属性节点
+        3代表文本节点
+        2.nodeName:节点名字
+        标签节点-大写标签名
+        属性节点-小写的属性值
+        文本节点-#text
+        3.nodeValue:节点的值
+        标签节点-NULL
+        属性节点-属性值
+        文本节点-文本内容
+        四，前四个必须记住
+        <ul id="uu">
+          <li></li>
+        </ul>
+        1.父节点 ulObj.parentNode
+        2.父元素 ulObj.parentElement
+        3.子节点 ulObj.childNodes
+        4.子元素 ulObj.children
+        以上四个最常用，兼容所有浏览器
+
+        扩展：
+        第一个子节点 ulObj.firstChild---IE8中叫元素
+        第一个子元素 ulObj.firstElementChild---IE8中不支持
+        最后一个子节点 ulObj.lastChild---IE8中叫元素
+        最后一个子元素 ulObj.lastElementChild---IE8中不支持
+
+
+        某一个元素的前一个兄弟节点
+        ulObj.previousSibling---IE8中叫元素
+        某一个元素的前一个兄弟元素
+        ulObj.previousElementSibling---IE8中不支持
+        某一个元素的后一个兄弟节点
+        nextSibling---IE8中叫元素
+        某一个元素的后一个兄弟元素
+        nextElementSibling---IE8中不支持
+
+        总结：从第一个子节点开始，只要是节点在IE8等低版本浏览器中都不支持，只要是节点在IE8等低版本浏览器中都叫做元素
+
+        五，获取属性(了解即可)
+        .getAttributeNode("id")---到此，把标签、属性、文本都获取到了
+
+        六，案例
+        隔行换色、背景图切换、全选和反选、字符串拼接方式(四种：外单内双、外双内单、转义字符、ES6)
+
+        七，创建元素方式：3种
+        1.document.write();缺陷：当页面加载完毕后，执行document.write()，会覆盖前面的内容
+        2.innerHTML-创建一个对象
+        3.创建多个对象
+        (1)创建元素createElement("标签名")
+        (2)将创建好的元素追加到父元素中appendChild()
+
+        八，案例
+        点击按钮创建表格、列表、图片...
+
+        九，绑定事件的方式
+        1.以on开头的
+        事件源.on事件类型 = 事件处理函数
+        2. 事件源.addEventListener("不带on的事件类型",事件处理函数,false);
+        3. 事件源.attachEvent("带on的事件类型",事件处理函数)
+
+        十，解绑事件的方式(必须使用命名函数)
+        1.以on开头的
+        事件源.on事件类型 = NULL;
+        2.事件源.removeEventListener("不带on的事件类型",事件处理函数,false)---事件处理函数必须为命名函数
+        3.事件源.detachEvent("带on的事件类型",事件处理函数)---事件处理函数必须为命名函数
+
+        十一，事件冒泡
+        事件冒泡一定是盒子嵌套盒子，如果里面的盒做了点击事件，外面的盒子和里面的盒子有相同的点击事件，则外面的盒子也会被触发
+        满足的条件：1.盒子嵌套2.里面和外面的盒子有相同的事件
+
+        十二,阻止事件冒泡
+        1. event.stopPropagation();//这里event可以简写为e---e.stopPropagation()---谷歌和火狐浏览器支持，IE不支持
+        2.window.event.cancelBubble = true;---谷歌和火狐浏览器不支持，IE支持
+
+
+         */
+    </script>
+</body>
+
+</html>

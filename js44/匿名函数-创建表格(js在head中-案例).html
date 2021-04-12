@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./publick.js"></script>
+    <script>
+        //js在head中，需要写入口函数
+        window.onload = function () {
+            //定义数组，存放网址和名字
+            var arr = [
+                { name: "百度", href: "http://www.baidu.com" },
+                { name: "优酷", href: "http://www.youku.com" },
+                { name: "360浏览器", href: "http://123.daohang88.com/" },
+                { name: "爱奇艺", href: "https://www.iqiyi.com/" }
+            ];
+            //点击按钮创建表格
+            my$("btn").onclick = function () {
+                //1.创建表格table元素
+                //创建元素createElement("标签名")
+                var tableObj = document.createElement("table");
+                tableObj.border = "1";
+                tableObj.cellPadding = "0";//边距
+                tableObj.cellSpacing = "0";//间距
+                //2.将创建的表格元素追加到父元素中
+                my$("dv").appendChild(tableObj);
+                //循环遍历，创建tr行
+                for (var i = 0; i < arr.length; i++) {
+                    //将数组中的数据获取到，供单元格td使用
+                    var dt = arr[i];
+                    //1.创建tr元素
+                    //创建元素createElement("标签名")
+                    var trObj = document.createElement("tr");
+                    //2.将创建的tr元素追加到父元素table中
+                    tableObj.appendChild(trObj);
+
+                    //创建列td(需求：创建两列)
+                    //创建第一列td
+                    //2.创建元素createElement("标签名")
+                    var td1 = document.createElement("td");
+                    // td1.innerHTML = "百度";//固定死的，因此需要根据单元格里的内容来创建列td
+                    td1.innerHTML = dt.name;
+                    //2.将创建好的td元素追加到父元素tr中
+                    trObj.appendChild(td1);
+
+                    //创建第二列td
+                    //1.创建第二列元素
+                    var td2 = document.createElement("td");
+
+
+                    //字符串拼接方式:1.内单外双2.内双外单3.转义字符4.ES6
+
+                    td2.innerHTML = "<a href=\"" + dt.href + "\">" + dt.name + "</a>";//转义字符
+
+                    td2.innerHTML = "<a href='" + dt.href + "'>" + dt.name + "</a>";//外双内单
+
+                    td2.innerHTML = `<a href="${dt.href}">${dt.name}</a>`;//ES6
+
+                    //2.将创建好的第二列td追加到父元素中
+                    trObj.appendChild(td2);
+                }
+
+            }
+        }
+
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    <input type="button" id="btn" value="创建表格">
+    <div id="dv"></div>
+</body>
+
+</html>

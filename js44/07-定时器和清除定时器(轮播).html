@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="清除定时器" id="btn">
+    <script>
+        /* 
+        定时器：炸弹、闹钟(炸弹只爆炸一次)
+        定时器有两种：
+        1.setInterval---轮播中最常用---原子弹(会不停地执行下去)
+        如果不清除定时器，则会一直执行
+        2.setTimeout---一次性广告(弹出广告)---现在很少看到
+
+        1.setInterval(匿名函数,时间)
+        参数1：匿名函数
+        参数2：时间(单位ms毫秒)  1000ms=1s(千分之一为单位)
+        */
+
+        //开启定时器
+        var timeId = setInterval(function(){
+            alert("2秒后弹出");
+        },2000);//会不停地执行
+        //引出清除定时器
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            window.clearInterval(timeId);//前面定时器给了timeId变量
+
+            //window可省
+            // clearInterval(timeId);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .hd {
+            height: 45px;
+        }
+
+        .hd span {
+            display: inline-block;
+            width: 90px;
+            background-color: pink;
+            line-height: 45px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .hd span.current {
+            background-color: purple;
+        }
+
+        .bd li {
+            height: 255px;
+            background-color: purple;
+            display: none;
+        }
+
+        .bd li.current {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">
+        <!-- 第一个div -->
+        <div class="hd">
+            <span class="current">体育</span>
+            <span>娱乐</span>
+            <span>新闻</span>
+            <span>综合</span>
+        </div>
+        <!-- 第二个div -->
+        <div class="bd">
+            <ul>
+                <li class="current">我是体育模块</li>
+                <li>我是娱乐模块</li>
+                <li>我是新闻模块</li>
+                <li>我是综合模块</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./publick.js"></script>
+    <script>
+         //获取基本元素
+        //获取最外面的div
+        var  box = my$("box");
+        //获取box中第一个div
+        var hd = box.getElementsByTagName("div")[0];
+        //获取box中第二个div
+        var bd = box.getElementsByTagName("div")[1];
+        //获取bd中所有li
+        var list = bd.getElementsByTagName("li");//集合(伪数组)
+        //获取hd中所有span
+        var spans = hd.getElementsByTagName("span");//集合(伪数组)
+
+        //循环遍历所有span 给所有span做点击事件
+        for(var i = 0; i < spans.length; i++){
+            //设置自定义属性
+            spans[i].setAttribute("index",i);
+            //给所有span元素添加点击事件
+            spans[i].onclick = function(){
+                //排他思想:1.将所有span样式移除removeAttribute("属性名")
+                for(var j = 0; j < spans.length; j++){
+                    spans[j].removeAttribute("class");
+                }
+                //2.this自身
+                this.className = "current";
+
+                //获取自定义属性
+                // alert(this.getAttribute("index"));//测试---未生效
+
+                var num = this.getAttribute("index");
+                //下面选项卡里的内容也需要跟随上面span进行排他思想
+                //循环遍历
+                for(var k = 0; k < list.length; k++){
+                    //1.移除所有
+                    list[k].removeAttribute("class");
+                }
+                //2.自身选中
+                list[num].className = "current";
+
+        }
+    }
+    </script>
+</body>
+
+</html>

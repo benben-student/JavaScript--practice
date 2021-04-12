@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./publick.js"></script>
+    <script>
+        //js写在head中，需要有入口函数
+        window.onload = function () {
+            //动态创建列表-可以创建多个对象
+            //定义数组，存放姓名
+            var names = ["雪狐老师", "路遥老师", "小龙老师", "夏栀老师", "沐沐老师"];
+            //点击按钮创建列表
+            my$("btn").onclick = function () {
+                //1.创建ul元素(创建元素：createElemnt("标签名"))
+                var ulObj = document.createElement("ul");
+                //2.将创建的ul元素追加到父元素中(appendChild(ulObj))
+                my$("dv").appendChild(ulObj);
+                //动态创建li元素
+                //循环遍历
+                for (var i = 0; i < names.length; i++) {
+                    //1.创建li元素(创建元素：createElemnt("标签名"))
+                    var liObj = document.createElement("li");
+                    liObj.innerHTML = names[i];
+                    //2.将创建的li元素追加到父元素中
+                    ulObj.appendChild(liObj);
+
+                    //鼠标经过
+                    liObj.onmouseover = function () {
+                        this.style.backgroundColor = "red";
+                    }
+                    //鼠标离开
+                    liObj.onmouseout = function () {
+                        this.style.backgroundColor = "";
+                    }
+                }
+
+            }
+        }
+
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        div {
+            width: 300px;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" id="btn" value="创建列表">
+    <div id="dv"></div>
+</body>
+
+</html>

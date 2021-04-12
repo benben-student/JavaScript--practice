@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1 {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #dv2 {
+            width: 250px;
+            height: 150px;
+            background-color: green;
+        }
+
+        #dv3 {
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dv1">
+        <div id="dv2">
+            <div id="dv3"></div>
+        </div>
+    </div>
+    <script src="./publick.js"></script>
+    <script>
+        /* 
+        事件阶段：三个阶段
+        1.事件捕获：用数字代表就是1(若看到数字1则代表事件捕获)---从外到内
+        2.目标阶段：用数字代表就是2(若看到数字2则代表目标阶段)
+        3.冒泡：用数字代表就是3(若看到数字3则代表冒泡)---从内到外
+        */
+        var objs = [my$("dv3"), my$("dv2"), my$("dv2")];
+       //for循环遍历(foreach循环遍历和for循环一样)
+       //foreach更优化
+        /*
+        foreach语法格式：
+        foreach(function(ele){要执行的代码;})
+        */
+    //for
+    //    for(var i = 0; i < objs.length; i++){}
+
+    //foreach
+    objs.forEach(function(ele){
+        // element简写为ele
+        ele.addEventListener("click",function(e){
+            // console.log(this);//获取到自身、当前
+            // console.log(this.id);
+            console.log(e.eventPhase);
+            //e.eventPhase用于检测事件三阶段代表什么数字
+        },false);//false-代表事件冒泡(从内到外)
+
+        //.addEventListener("不带on事件类型",事件处理函数,false);
+    })
+    //触发dv3(2代表目标，被触发的对象)，dv2 dv1-3(3代表冒泡)
+
+    </script>
+</body>
+
+</html>
