@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            margin-top: 20px;
+        }
+        div{
+            position: absolute;/*移动-需要考虑定位*/
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            left: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="btn1" value="移动到400px">
+    <input type="button" id="btn2" value="移动到800px">
+    <div id="dv"></div>
+    <script src="./publick.js"></script>
+    <script>
+        /* 
+        核心思想：
+        首先移动盒子，让它脱离标准流---position: absolute;
+        获取div当前位置：my$("dv").offsetLeft
+        */
+       //点击第一个按钮移动到400px
+       my$("btn1").onclick = function(){
+           //设置定时器
+           var timeId = setInterval(function(){
+               //获取div当前位置
+               var current = my$("dv").offsetLeft;
+            //    console.log(current);测试
+            //假设每次移动的步数或像素是10
+            var step = 10;
+            //每次移动后的距离
+            current += step;//相当于current = current + step
+            //判断当前移动后的距离是否到达目标位置
+            if(current <= 400){
+                my$("dv").style.left = current + "px";//注意单位是px
+            }else{
+                //清除定时器
+                clearInterval(timeId);
+            }
+
+           },20);
+       }
+
+
+       //点击第二个按钮移动到800px
+       my$("btn2").onclick = function(){
+           //设置定时器
+           var timeId = setInterval(function(){
+               //获取div当前位置
+               var current = my$("dv").offsetLeft;
+               //假设每次div移动10px
+               var step = 10;
+               //每次移动后的距离
+               current += step;
+               //判断当前移动后的距离是否到达目标位置
+               if(current <= 800){
+                   my$("dv").style.left = current + "px";
+               }else{
+                   //否则清除定时器
+                   clearInterval(timeId);
+               }
+           },20);
+       }
+
+       //思考：存在两个问题：1.快速点击多次会出问题(解决：设表先关[经典面试题]-可以优化)2.移动到800px位置返回不到400px位置(解决？)
+    </script>
+</body>
+</html>
