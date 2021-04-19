@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            /*运动起来一定要有定位*/
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="一起摇摆" id="btn1">
+    <input type="button" value="停止摇摆" id="btn2">
+    <div id="dv">
+        <img src="images/1.jpg" alt="这是图片">
+        <img src="images/2.jpg" alt="这是图片">
+    </div>
+    <script src="main.js"></script>
+    <script>
+        var timed = "";//全局变量
+        my$("btn1").onclick = function () {
+            timeId = setInterval(function () {
+                //定义随机数
+                var x = parseInt(Math.random() * 100 + 1);
+                var y = parseInt(Math.random() * 100 + 1);
+                //设置元素的left和top属性
+                my$("dv").style.left = x + "px";
+                my$("dv").style.top = y + "px";
+            }, 10)//时间越小越快
+        };
+        //停止计时器
+        my$("btn2").onclick = function () {
+            clearInterval(timeId);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            background: black;
+            position: relative;
+            /*父相子绝*/
+        }
+
+        span {
+            position: absolute;
+            font-size: 30px;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="亮起来" id="btn">
+    <div id="dv"></div>
+    <script src="main.js"></script>
+    <script>
+        my$("btn").onclick = function () {
+            setInterval(function () {
+                my$("dv").innerHTML = "<span>☆</span>";
+                var x = parseInt(Math.random() * 600 + 1);
+                var y = parseInt(Math.random() * 600 + 1);
+                my$("dv").firstElementChild.style.left = x + "px";
+                my$("dv").firstElementChild.style.top = y + "px";
+            }, 5)
+        }
+    </script>
+
+</body>
+
+</html>
