@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="a">
+         <div class="b">
+             <ul id="c">
+                 <li><img src="images/01.jpg" alt=""></li>
+                 <li><img src="images/02.jpg" alt=""></li>
+                 <li><img src="images/03.jpg" alt=""></li>
+                 <li><img src="images/04.jpg" alt=""></li>
+                 <li><img src="images/05.jpg" alt=""></li>
+             </ul>
+         </div>
+         <div id="d">
+             <span id="left">&lt;</span>
+             <span id="right">&gt;</span>
+         </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="fuction.js"></script>
+    <script>
+        var a=my$("a");
+        var b=a.children[0];
+        var e=b.offsetWidth;
+        var c=b.children[0];
+        var d=my$("d");
+        a.onmouseover=function(){
+            d.style.display="block";
+        }
+        a.onmouseout=function(){
+            d.style.display="none";
+        }
+        var index=0;
+        my$("right").onclick=function(){
+            if(index<c.children.length-1){
+                index++;
+                animate(c,-index*e);
+            }
+        }
+        my$("left").onclick=function(){
+            if(index>0){
+                index--;
+                animate(c,-index*e);
+            }
+        }
+    </script>
+    
+</body>
+</html>
