@@ -1,0 +1,90 @@
+body, ul, ol, li, img {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#a {
+    width: 520px;
+    height: 280px;
+    padding: 5px;
+    position: relative;
+    border: 1px solid #ccc;
+    margin: 100px auto 0;
+}
+
+.b {
+    width: 520px;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+}
+
+#a img {
+    width: 520px;
+}
+
+.b ol {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.b ol li {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background: #fff;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline;
+}
+
+.b ol li.current {
+    background: yellow;
+}
+
+.b ul li {
+    float: left;
+}
+
+.b ul {
+    position: absolute;
+    top: 0;
+    width: 2940px;
+}
+
+.b ul li.current {
+    display: block;
+}
+
+#d {
+    display: none;
+}
+
+#d span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    margin-top: -20px;
+    background: #000;
+    cursor: pointer;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-family: '黑体';
+    font-size: 30px;
+    color: #fff;
+    opacity: 0.3;
+    border: 1px solid #fff;
+}
+
+#d #right {
+    right: 5px;
+    left: auto;
+}

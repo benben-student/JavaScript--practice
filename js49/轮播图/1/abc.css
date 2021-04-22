@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+
+}
+
+img {
+    vertical-align: top;
+}
+
+/*取消图片底部3像素距离*/
+.a {
+    width: 300px;
+    height: 200px;
+    margin: 100px auto;
+    background-color: pink;
+    border: 1px solid red;
+    position: relative;
+    overflow: hidden;
+}
+
+.a ul li {
+    float: left;
+}
+
+.a ul {
+    width: 1500px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

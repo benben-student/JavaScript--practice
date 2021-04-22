@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="all" id="box">
+        <div class="screen">
+            <ul>
+                <li><img src="images/1.jpg" width="500" height="200" alt=""></li>
+                <li><img src="images/2.jpg" width="500" height="200" alt=""></li>
+                <li><img src="images/3.jpg" width="500" height="200" alt=""></li>
+                <li><img src="images/4.jpg" width="500" height="200" alt=""></li>
+                <li><img src="images/5.jpg" width="500" height="200" alt=""></li>
+            </ul>
+            <ol>
+            </ol>
+        </div>
+        <div id="arr">
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        var box = my$("box");
+        var screen = box.children[0];
+        var imgWidth = screen.offsetWidth;
+        var ulObj = screen.children[0];
+        var list = ulObj.children;
+        var olObj = screen.children[1];
+        var arr = my$("arr");
+        var pic = 0;
+        for (var i = 0; i < list.length; i++) {
+            var liObj = document.createElement("li");
+            olObj.appendChild(liObj);
+            liObj.innerHTML = (i + 1);
+            liObj.setAttribute("index", i);
+            liObj.onclick = function () {
+                for (var j = 0; j < olObj.children.length; j++) {
+                    olObj.children[j].removeAttribute("class");
+                }
+                this.className = "current";
+                pic = this.getAttribute("index");
+                animate(ulObj, -pic * imgWidth);
+            }
+        }
+        olObj.children[0].className = "current";
+        ulObj.appendChild(ulObj.children[0].cloneNode(true));
+        var timeId = setInterval(clickHandel, 3000);
+        box.onmouseover = function () {
+            arr.style.display = "block";
+            clearInterval(timeId);
+        };
+        box.onmouseout = function () {
+            arr.style.display = "none";
+            timeId = setInterval(clickHandel, 2000);
+        };
+        my$("right").onclick = clickHandel;
+        function clickHandel() {
+            if (pic == listl.length - 1) {
+                pic = 0;
+                ulObj.style.left = 0 + "px";
+            }
+            pic++;
+            animate(ulObj, -pic * imgWidth);
+            if (pic == list.length - 1) {
+                olObj.children[olObj.children.length - 1].className = "";
+                olObj.children[0].className = "current";
+            } else {
+                for (var i = 0; i < olObj.children.length; i++) {
+                    olObj.children[i].removeAttribute("class");
+                }
+                olObj.children[pic].className = "current";
+            }
+        }
+        my$("left").onclick = function () {
+            if (pic == 0) {
+                pic = 5;
+                ulObj.style.left = -pic * imgWidth + "px";
+            }
+            pic--;
+            animate(olObj, -pic * imgWidth);
+            for (var i = 0; i < olObj.children.length; i++) {
+                olObj.children[i].removeAttribute("class");
+            }
+            olObj.children[pic].className = "current";
+        }
+
+    </script>
+</body>
+
+</html>
