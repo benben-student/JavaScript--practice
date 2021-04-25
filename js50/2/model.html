@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj1={
+            name:"wc",
+            age:18,
+            sex:"男"
+        };
+        var obj2=obj1;
+        console.log(obj1.name); // 输出对象的方法点语法 (.)翻译中文 "的"的意思
+        console.log(obj1.age);
+        // 修改对象里面的值也是使用点语法
+        console.log("===========");
+        obj2.name="ls";
+        console.log(obj1.name);
+        console.log(obj2.name);
+
+    </script>
+    
+</body>
+</html>
