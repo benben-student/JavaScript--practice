@@ -52,4 +52,4 @@ var str1 = "18aaa";
 console.log(+str);
 console.log(-str);
 console.log(str1 - 0);
-console.log(str1 + 0);//
+console.log(str1 + 0);//123
