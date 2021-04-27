@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>异常捕获</title>
+</head>
+<body>
+    <script>
+        /*  
+        异常捕获：当某一块代码出现了错误的时候(出现bug)，不要停止后面的代码，跳过错误的信息，继续执行后面的代码，当完成整个项目以后再回头找这个错误信息bug-->工作流程
+        */
+        /* var a = 4;
+        console.log(a);
+        console.log(b);
+        function fun(){
+            console.log("我想继续执行");
+        }
+        // 这种情况下，代码就执行不下去了 */
+
+        // 异常捕获的语法-公式
+        /*  
+            try{
+                存放一些可能会出错的代码，如果有错误信息，那么就执行catch里面的代码，如果没有错误就不会执行catch里面的代码
+            }catch(e){
+                // 如果try里面的代码出现了错误信息，就会执行catch里面的代码
+                // e->错误信息
+            }
+        */
+
+        /* 
+            var a = 4;
+            try{
+                console.log(a);
+                console.log(b);
+            }catch(e){
+                console.log("Error Msg", e);
+            }
+            function fun(){
+                console.log("我想继续执行");
+            } 
+            fun()
+        */
+
+        // 还可以手动抛出异常-> throw 异常信息-----一旦手动抛出了异常，后面的代码就不会执行了
+        
+            var a = 4;
+            try{
+                console.log(a);
+                console.log(b);
+            }catch(e){
+                // throw "这里有一个错误，记得修正"
+                // throw "这里有一个错误，记得修正" + e    //手动异常+错误信息
+                throw{
+                    errorMsg: e,    //错误信息
+                    errorCode: 404  //错误编码
+                }
+            }finally{//加上finally就是一个完整的结构了
+                // 不管前面的代码有没有错误，都会执行finally中的代码
+                // 存放一些初始化代码
+                // 扩展的这个知识点，多用于后端开发node.js, 来释放一下资源
+                console.log("不管前面有没有错误信息，这里的代都会执行");
+            }
+            function fun(){
+                console.log("我想继续执行");
+            } 
+            fun()
+        
+
+    </script>
+</body>
+</html>

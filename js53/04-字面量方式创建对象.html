@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字面量创建对象</title>
+</head>
+<body>
+    <script>
+        // 字面量方式创建对象
+        var stu1 = {
+            name: "小张",
+            sex: "男",
+            age: 17,
+            print: function(){
+                console .log("姓名：" + this.name + "    " + "年龄：" + this.age);
+            }
+        }
+        console.log("姓名：",stu1.name);
+        console.log("性别：",stu1.sex);
+        console.log("年龄：",stu1.age);
+        stu1.print();
+
+        var stu2 = {
+            name: "小李",
+            sex: "男",
+            age: 16,
+            print: function(){
+                console .log("姓名：" + this.name + "    " + "年龄：" + this.age);
+            }
+        }
+        console.log("---------------------------");
+        console.log("姓名：",stu2.name);
+        console.log("性别：",stu2.sex);
+        console.log("年龄：",stu2.age);
+        stu2.print();
+
+        var stu3 = {
+            name: "小敏",
+            sex: "女",
+            age: 16,
+            print: function(){
+                console .log("姓名：" + this.name + "    " + "年龄：" + this.age);
+            }
+        }
+        console.log("---------------------------");
+        console.log("姓名：",stu3.name);
+        console.log("性别：",stu3.sex);
+        console.log("年龄：",stu3.age);
+        stu3.print();
+
+        // 总结：字面量创建对象和内置构造函数创建对象的两种方式，优点是简单易懂，缺点代码冗余
+    </script>
+</body>
+</html>

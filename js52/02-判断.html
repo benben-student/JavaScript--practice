@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 扩展的面试--需求：判断数组中是否存在B字符串，这个元素
+        var arr = ["A", "B", "C"];
+
+        for (k in arr) {
+            if (arr[k] == 'B') {
+                console.log('存在');
+            }
+        }
+
+        if (arr.indexOf('B') != -1) {
+            console.log('存在');
+        }
+            if (1 in arr) {
+                console.log('存在');
+            }
+    </script>
+</body>
+
+</html>

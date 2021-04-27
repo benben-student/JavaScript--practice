@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置构造函数方式创建对象</title>
+</head>
+<body>
+    <script>
+        // 内置构造函数方式创建对象
+        var stu1 = new Object();
+        stu1.name = "小张";
+        stu1.sex = "男";
+        stu1.age = 17;
+        stu1.print = function(){
+            console .log("姓名：" + this.name + "    " + "年龄：" + this.age);
+        }
+        console.log("姓名：",stu1.name);
+        console.log("性别：",stu1.sex);
+        console.log("年龄：",stu1.age);
+        stu1.print();
+        
+        var stu2 = new Object();
+        stu2.name = "小李";
+        stu2.sex = "男";
+        stu2.age = 18;
+        stu2.print = function(){
+            console .log("姓名：" + this.name + "    " + "年龄：" + this.age);
+        }
+        console.log("-------------------------");
+        console.log("姓名：",stu2.name);
+        console.log("性别：",stu2.sex);
+        console.log("年龄：",stu2.age);
+        stu2.print();
+        
+        var stu3 = new Object();
+        stu3.name = "小敏";
+        stu3.sex = "女";
+        stu3.age = 16;
+        stu3.print = function(){
+            console .log("姓名：" + this.name + "    " + "年龄：" + this.age);
+        }
+        console.log('-------------------------');
+        console.log("姓名：",stu3.name);
+        console.log("性别：",stu3.sex);
+        console.log("年龄：",stu3.age);
+        stu3.print();
+    </script>
+</body>
+</html>

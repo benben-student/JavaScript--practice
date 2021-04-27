@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业</title>
+</head>
+<body>
+    <script>
+        //练习一:有一个黄色的小狗,叫大黄,今年已经三岁了,250斤的重量每次走路都很慢,喜欢吃大骨头
+        //练习二:创建一个手机对象,手机有型号,有颜色,可以打电话和发短信
+        // 分别用--字面量、和内置构造函数 
+
+        // 练习一：
+            // 1、字面量方式
+            var dog1 = {
+                name: "大黄",
+                age: 3,
+                weight: "250斤",
+                eat: function(){
+                    console.log("吃大骨头");
+                }
+            }
+            console.log(dog1.name);
+            console.log(dog1.age);
+            console.log(dog1.weight);
+            dog1.eat();
+
+            // 内置构造函数方式
+            var dog2 = new Object();
+            dog2.name = "大黄";
+            dog2.age = 3;
+            dog2.weight = "250斤";
+            dog2.eat = function(){
+                console.log("吃大骨头");
+            }
+            console.log('------------------------');
+            console.log(dog2.name);
+            console.log(dog2.age);
+            console.log(dog2.weight);
+            dog2.eat();
+
+        // 练习二
+            // 字面量方式
+            var phone1 = {
+                model: "iphone 12 pro max",
+                color: "white",
+                call: function(){
+                    console.log("打电话");
+                },
+                message: function(){
+                    console.log("我能发信息");
+                }
+            }
+            console.log('-----------------------------');
+            console.log(phone1.model);
+            console.log(phone1.color);
+            phone1.call();
+            phone1.message();
+            
+            // 字面量方式
+            var phone2 = {
+                model: "iphone 12 pro max",
+                color: "white",
+                call: function(){
+                    console.log("打电话");
+                },
+                message: function(){
+                    console.log("我能发信息");
+                }
+            }
+            console.log('---------------------------');
+            console.log(phone2.model);
+            console.log(phone2.color);
+            phone2.call();
+            phone2.message();
+    </script>    
+</body>
+</html>

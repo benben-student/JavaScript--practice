@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // in 第一种作业 检测对象中是否存在该属性 存在true 不存在 false
+        // 语法 key in obj
+        var obj = {
+            name:'zs',
+            sex:'nan',
+            age:19,
+            sayHi:function(){
+                console.log('niupi');
+            }
+        }
+        // obj['19'] = '11';
+        // console.log('name' in obj);
+        // console.log('nam' in obj);
+        // console.log('age' in obj);
+        // console.log('19' in obj);
+        // in 的第二个作业 遍历循环数组
+        for(var k in obj) {
+            console.log(k,obj[k]);
+        }
+        console.log(obj);
+
+        for(var key in obj) {
+            if(typeof obj[key] != 'function') {
+                console.log(obj[key]);
+            }
+        }
+        var arr = [1,2,3,4,5];
+        for(var k in arr) {
+            console.log(k,arr[k]);
+        }
+    </script>
+</body>
+</html>

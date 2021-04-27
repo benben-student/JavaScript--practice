@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工厂模式</title>
+</head>
+<body>
+    <script>
+        // 工厂模式(将创建对象封装成函数)
+        function createStudent(name, sex, age){
+            var student = {
+                name: name,
+                sex: sex,
+                age: age,
+                print: function(){
+                    console .log("姓名：" + this.name + " " + "年龄：" + this.age);
+                }
+            }
+            return student;
+        }
+        var stu1 = createStudent("小张", "男", 17);
+        console.log("姓名：",stu1.name);
+        console.log("性别：",stu1.sex);
+        console.log("年龄：",stu1.age);
+        stu1.print();
+
+        console.log('---------------------------');
+        var stu2 = createStudent("小李", "男", 18);
+        console.log("姓名：",stu2.name);
+        console.log("性别：",stu2.sex);
+        console.log("年龄：",stu2.age);
+        stu2.print();
+        
+        console.log('---------------------------');
+        var stu3 = createStudent("小敏", "女", 16);
+        console.log("姓名：",stu3.name);
+        console.log("性别：",stu3.sex);
+        console.log("年龄：",stu3.age);
+        stu3.print();
+
+
+        // 解决了代码冗余的缺点
+    </script>
+</body>
+</html>
