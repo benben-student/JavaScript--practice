@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.isPrototypeOf判断某个对象是否是指定实例对象的原型对象；若是则返回true，否则返回false(即找父类，跟instanceOf一样)
+        function Person(name,age){
+            this.name = name;//私有属性
+            this.age = age;//私有属性
+        }
+        //方法放在原型上
+        Person.prototype = {
+            constructor:Person,//若原型指给了一个空对象，千万别忘了在对象里修改指向constructor:Person
+            say:function(){
+                console.log("姓名:" + this.name + "年龄:" + this.age);
+            }
+        }
+        //实例化对象
+        var per1 = new Person("zs",18);
+        console.log(per1);
+
+        var per2 = new Person("ls",20);
+        console.log(per2);
+
+        //原型对象也是对象
+        console.log(Person.prototype.isPrototypeOf(per1));//true
+        console.log(Person.prototype.isPrototypeOf(per2));//true
+        console.log(Person.prototype.isPrototypeOf({}));//false
+
+        //2.instanceOf判断当前对象是否是指定类型，即找父类---更深入理解：指定类型是否在当前实例对象的原型链上；若是返回true，否则返回false
+        console.log(per1 instanceof Person);
+        console.log(per2 instanceof Person);
+
+
+    </script>
+</body>
+</html>

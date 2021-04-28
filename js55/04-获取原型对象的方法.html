@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //问：获取原型对象的方法(面试)
+        /* 
+        构造函数.prototype
+        实例化对象.__proto__
+        Object.getPrototypeOf(实例化对象)---如Object.getPrototypeOf(per1)
+        */
+
+        //自定义构造函数
+        function Person(name, age, sex) {//自定义构造函数
+            this.name = name;//对象成员(属性)
+            this.age = age;//对象成员(属性)
+            this.sex = sex;//对象成员(属性)
+        }
+        //方法放在原型上
+        Person.prototype.sayHi = function () {
+            console.log("原型上的方法");
+        }
+        //实例化对象
+        var per1 = new Person("zs", 18, "男");
+        console.log(per1);
+        console.log(per1.name);
+        console.log(per1.age);
+        console.log(per1.sex);
+        per1.sayHi();
+        console.log("====================");
+
+        //获取原型对象
+        console.log(Person.prototype);
+        console.log(per1.__proto__);
+        console.log(Object.getPrototypeOf(per1));
+
+        //比较
+        console.log(Person
+        .prototype == per1.__proto__);
+        console.log(Person.prototype == Object.getPrototypeOf(per1));
+        console.log(per1.__proto__ == Object.getPrototypeOf(per1));
+    </script>
+</body>
+
+</html>

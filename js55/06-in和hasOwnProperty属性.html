@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        回顾：in关键字---检测对象中是存在该属性(不仅能检测私有属性还能检测公有属性)---不仅能检测自己身上的属性和方法，还能检测原型上的属性和方法。若存在这个属性，则返回true,否则返回false
+        */
+        //自定义构造函数
+        function Person(name, age) {
+            this.name = name;//属性(私有属性)
+            this.age = age;//属性(私有属性)
+        }
+
+        //方法都加到原型上-原型上不管是属性还是方法都是公有的
+        //原型方法以后会有很多，给一个对象，那么父亲就会找不对，记得修改指向
+        Person.prototype = {
+            constructor:Person,//千万不要忘记修改指向
+            say:function(){
+                console.log("我是公有方法");
+            },
+            play:function(){
+                console.log("我也是公有方法");
+            }
+        }
+        //实例化对象
+        var per1 = new Person("zs", 18);
+        console.log(per1);
+
+        var per2 = new Person("ls", 20);
+        console.log(per2);
+
+        console.log("name" in per1);
+        console.log("age" in per1);
+        console.log("say" in per1);//在原型身上都是公有的
+        console.log("play" in per1);//在原型身上都是公有的
+
+        //检测对象的属性和方法(只能检测私有的，不能检测公有的)-即原型上的属性和方法都检测不到的，检测到了就返回true,否则返回false
+        console.log("===============");
+        console.log(per1.hasOwnProperty("name"));
+        console.log(per1.hasOwnProperty("age"));
+        console.log(per1.hasOwnProperty("say"));//在原型上都公有的，检测不到返回false
+        console.log(per1.hasOwnProperty("play"));//在原型上都公有的，检测不到返回false
+    </script>
+</body>
+
+</html>

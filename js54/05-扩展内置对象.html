@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求：为数组添加一个获取元素的方法Array
+        var arr1 = [1,2,3,4,5];
+        var arr2 = ["A","B","C","D","E"];
+        // arr1.getLength = function(){
+        //     return this.length;//元素个数就是数组长度
+        // }
+        // arr2.getLength = function(){
+        //     return this.length;//元素个数就是数组长度
+        // }
+        //直接把这个获取元素个数的方法放到数组的原型上
+        Array.prototype.getLength = function(){
+            return this.length;
+        }
+        console.log(arr1.getLength());
+        console.log(arr2.getLength());
+        console.dir(arr1);
+
+        //不建议在原型上修改-引出安全的内置对象-06
+
+
+    </script>
+</body>
+</html>

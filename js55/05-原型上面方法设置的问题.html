@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //构造函数
+        function Person(name, age) {
+            this.name = name;//对象成员(属性)
+            this.age = age;//对象成员(属性)
+        }
+        //方法放在原型上-如果只有一个方法这样写可行，若果有多个方法则不可信
+        // Person.prototype.sayHi = function () {
+        //     console.log("原型上的方法");
+        // }
+        // Person.prototype.play = function () {
+        //     console.log("原型上的方法2");
+        // }
+        // Person.prototype.eat = function () {
+        //     console.log("原型上的方法3");
+        // }
+        //......
+        //若原型上方法有很多，则可以直接给一个对象{}
+        // var obj = {} 或 var obj = new Object()
+        Person.prototype = {
+            construcor:Person,//若把原型的指向给了一个对象{}，那么千万别忘记在对象里面修改指向constructor:Person
+            sayHi:function(){
+                console.log("姓名:" + this.name + "年龄:" + this.age);
+            },
+            play:function(){
+                console.log("姓名:" + this.name);
+            },
+            eat:function(){
+                console.log("年龄:" + this.age);
+            }
+        }
+
+        //实例化对象
+        var per1 = new Person("zs", 18, "男");
+        console.log(per1);
+        console.log(per1.name);
+        console.log(per1.age);
+        per1.sayHi();
+        per1.play();
+        per1.eat();
+
+        console.log(per1.construcor);
+    </script>
+</body>
+
+</html>

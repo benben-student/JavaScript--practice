@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //原型式继承
+
+        //构造函数
+        function Animal(){
+
+        }
+        //给Animal原型上添加方法
+        Animal.prototype.eat = function(){
+            console.log("Animal的原型上的方法");
+        }
+        //构造函数
+        function Person(){
+
+        }
+        //让Person来继承Animal原型上的方法-这种继承方式叫原型式继承
+        Person.prototype = Animal.prototype;
+
+        //实例化对象
+        var per1 = new Person();
+        console.log(per1);
+        per1.eat();
+
+        console.dir(per1);//获取原型
+
+        //拿自己的方法
+        var ani = new Animal();
+        console.log(ani);
+        console.dir(ani);
+
+        //原型式继承和混入式继承都有一样的缺陷：存在数据共享问题
+        //总结：学了两个继承方法都存在数据共享问题
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //总结：若我们直接修改Array.prototype，这样若大家都这么改，别人使用数组方法时，降低了搜索效率
+        //自定义构造函数
+        function MyArray(){
+
+        }
+        //让MyArray的原型指向Array对象，为了继承数组中所有方法(继承了Array中所有成员方法，为了继承数组Array原型上所有的方法，比如sort排序、pop、push...)
+        MyArray.prototype = new Array();
+        MyArray.prototype.getLength = function(){
+            return this.length;
+        }
+        //实例化对象
+        var arr1 = new MyArray();
+        arr1.push("A","B","C","D","E");
+        console.log(arr1.getLength());
+    </script>
+</body>
+</html>
