@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //自定义构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        //方法在原型上
+        Person.prototype.sayHi = function(){
+            console.log("方法在原型上");
+        }
+        //实例化对象
+        var per = new Person("zs",18);
+        console.log(per);
+
+        //所有函数都是Function的实例化对象(所有对象都是Object实例化对象)
+        console.log(Person.constructor);//Function
+        //把Person当做对象来看
+        console.log(Person.__proto__);//Person的母亲-空函数f()
+
+        console.log(Function.prototype);//Function的妻子-空函数f()
+        //找父类-Function很强大-自己创造自己-Function可以造万物
+        console.log(Function.constructor);//Function自身
+
+        console.log(Object.__proto__);//Object的母亲-空函数f()
+        //把对象当做函数
+        console.log(Object.__proto__.constructor);//Object的父亲-Function
+
+
+
+    </script>
+</body>
+</html>

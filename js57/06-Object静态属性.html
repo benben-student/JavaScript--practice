@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        Object静态属性
+        length长度-形参个数
+        name方法名字
+        arguments伪数组
+        create创建对象
+         */
+        var obj = {
+            name: "zs",
+            age: 18,
+            sex: "男"
+        }
+
+        //assign将多个对象合并到一个对象中，并返回(创建对象的方式-法6)
+        console.log(Object.assign(obj, { info: "信息" }, { age: 88 }, { name: "lw" }));//可以合并对象，有则改，无则加。有重名的对象，则后面写的覆盖先写的
+
+        //Object.create()创建对象
+
+        //is判断两个参数是否相等 等同于 === 注意下面有两组特殊的(面试题)
+        console.log(0 === -0);//true
+        console.log(Object.is(0, -0));//false
+
+        console.log(NaN === NaN);//false
+        //  NaN-not a number
+        console.log(Object.is(NaN, NaN));//true
+        //总结：0和-0  NaN和NaN 记住这两组特殊的(面试题)
+
+        //对属性进行增、删、改和查询
+        //getOwnPropertyDesciptor：获取当前对象中指定属性的描述对象
+        console.log(Object.getOwnPropertyDescriptor(obj, "name"));
+       /*         
+        value: "lw"---当前属性的值
+        writable: true---可写性。默认值为true，不可写，则返回false
+        enumerable: true---可枚举(循环遍历)。默认值为true，不可枚举(循环遍历)，则返回false
+        configurable: true---属性可配置性。默认值为true，属性不能被删除，则反悔啊false
+        */
+
+    </script>
+</body>
+
+</html>
