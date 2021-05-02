@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //需求：人Person 姓名 性别 年龄 吃饭...
+        //学生 姓名 性别 年龄 吃饭 成绩 学习行为...
+        function Person(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        //方法在原型上
+        Person.prototype.eat = function(){
+            console.log("方法在原型上");
+        }
+        //学生的构造函数(让学生继承Person)
+        function Student(score){
+            this.score = score;
+        }
+        //原型链继承
+        Student.prototype = new Person("小明",18,"男");//实现原型链继承就是为了继承Person的属性和方法
+
+        //在学生自身的原型上添加方法
+        Student.prototype.play = function(){
+            console.log("在学生自身的原型上添加方法");
+        }
+
+        //实例化对象
+        var stu = new Student(100);
+        console.log(stu.name,stu.age,stu.sex,stu.score);
+        stu.eat();
+        //调用学生的原型方法
+        stu.play();
+        //总结：到目前为止学了三个继承方法
+        
+
+    </script>
+</body>
+</html>

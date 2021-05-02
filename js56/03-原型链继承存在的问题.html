@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //需求：人Person 姓名 性别 年龄 体重 打电话和sayHi...
+        //学生 姓名 性别 年龄 体重 吃饭 成绩 学习行为...
+        function Person(name,age,sex,weight){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.weight = weight;
+        }
+        //方法在原型上
+        Person.prototype.sayHi = function(){
+            console.log("方法在原型上");
+        }
+        
+        //学生的构造函数(让学生继承Person)
+        function Student(score){
+            this.score = score;
+        }
+        //原型链继承
+        Student.prototype = new Person("小明",18,"男","200kg");
+
+        //在学生自身的原型上添加方法
+        Student.prototype.student = function(){
+            console.log("在学生自身的原型上添加方法");
+        }
+
+        //实例化对象
+        var stu1 = new Student(100);
+        console.log(stu1.name,stu1.age,stu1.sex,stu1.score);
+        stu1.sayHi();
+        stu1.student();
+
+        //实例化对象
+        var stu2 = new Student(110);
+        console.log(stu2.name,stu2.age,stu2.sex,stu2.score);
+        stu2.sayHi();
+        stu2.student();
+
+        //所有学生属性一样，缺陷-子类无法向父类传递参数-引出call()继承(经典继承或组合继承)
+
+        
+
+    </script>
+</body>
+</html>
