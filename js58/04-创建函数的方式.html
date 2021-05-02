@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function f1() {
+            console.log('命名函数');
+        }
+        f1();
+
+        var f2 = function () {
+            console.log('匿名函数，也有人说是匿名函数表达式');
+        }
+        f2();
+        // 通过new方法创建函数
+        var f3 = new Function('console.log("我是通过new创建的函数")')
+        f3();
+        console.log(f3());
+        console.log('===========');
+        var newFun = new Function("x", "return console.log(x)");
+        newFun(3)
+        var f4 = new Function("a,b",'return console.log((a+b)*(a-b))');
+        f4(5, 3);
+    </script>
+</body>
+
+</html>

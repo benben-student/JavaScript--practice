@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.dir(Object);
+        var obj = {
+            name: 'yy',
+            age: 13,
+            function: function () {
+                console.log("我是隔壁老王，小心啊");
+            }
+        }
+        /* 
+            11. getOwnPropertyNames 获取当前对象所有属性名称包含不可枚举属性
+            12. isExtensible() 检测当前对象是否扩展能添加 true 不能 false
+            13. preventExtensions 阻止当前对象的可扩展性 就是添加不了属性
+            14. issealed 检测当前对象是否被密封（不能添加属性和删除属性）没有显示false 被密封显示true
+            15. seal 密封当前对象（密封就是添加和删除不了属性 可以修改）
+            16. freeze 冻结当前对象(不能添加、修改、删除属性)
+            17. isFrozen 检测对象是否被冻结
+            18. entries 获取所有的对象，以数字的形式返回
+        */
+        console.log('=========');
+        // console.log(Object.getOwnPropertyNames(obj));
+        // console.log(Object.isExtensible(obj));
+        // Object.preventExtensions(obj);
+        // obj.color = 'red';
+        // console.log(obj);
+        // Object.seal(obj);
+        // console.log(Object.isSealed(obj));
+        // Object.freeze(obj);
+        // obj.color = 'red';
+        // console.log(delete obj.name);
+        // obj.name = 'zz';
+        // console.log(obj);
+        // console.log(Object.isFrozen(obj));
+        // console.log(Object.entries(obj));
+    </script>
+</body>
+
+</html>

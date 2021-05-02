@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.dir(Object);
+        var obj = {
+            name: 'yy',
+            age: 18
+        };
+        /* 
+            1. length 长度 形参的格式
+            2. name方法的名字
+            3. assign 将多个对象合并大奥一个对象中，并返回 也是第六种创建对象的方法
+            4. Object.create 创建对象的方法
+            5. is 判断两个数是否相等 等同于 === 但有两个特殊
+            6. getOwnPropertyDescriptor 获取某个属性的描述对象
+                configurable 属性可配置性 false 表示当前属性不可删除 默认都是true
+                enumerable 可枚举默认是true 可循环，可遍历 false不可循环、遍历
+                value 当前属性的值
+                writable 可写性 默认是true、表示可以修改和添加 false表示不可修改和添加
+            7. getOwnPropertyDescriptors 获取所有的属性的描述对象
+            8. defineProperties 一次性定义多个属性的可操作性(configurable,enumerable,value,writable)
+            9. definePropertys 定义当前属性的可操作性 (configurable,enumerable,value,writable)
+            10.kers 获取当前对象所有key属性的名称 不可枚举的属性除外(获取可以枚举的属性名称)
+        */
+        console.log('-------------');
+        // console.log(Object.assign(obj,{info:'信息'},{age:88}));
+        // console.log(Object.is(0, -0));
+        // console.log(0 === -0);
+        // console.log(Object.is(NaN,NaN));
+        // console.log(NaN === NaN);
+        // console.log(Object.getOwnPropertyDescriptor(obj,'name'));
+        // console.log(Object.getOwnPropertyDescriptors(obj));
+        // Object.defineProperties(obj, {
+        //     name: {
+        //         configurable: false,
+        //         writable:false
+        //     },
+        //     age: {
+        //         configurable: false,
+        //         writable:false
+        //     }
+        // })
+        // console.log(delete obj.name);
+        // console.log(delete obj.age);
+        // obj.name = 'zz';
+        // console.log(obj);
+        // Object.defineProperty(obj,'name',{
+        //     configurable: false
+        // })
+        // console.log(delete obj.name);
+        //     Object.defineProperty(obj,'name',{
+        //     enumerable: false
+        // })
+        // for(var k in obj) {
+        //     console.log(obj[k]);
+        // }
+        // console.log(Object.keys(obj));
+    </script>
+</body>
+
+</html>
