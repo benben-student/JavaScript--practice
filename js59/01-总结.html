@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    一，Object原型成员
+    1.构造器constructor-获取当前对象的构造函数
+    2.hasOwnProperty-检测私有属性(判断当前实例对象是否存在指定的属性)
+    3.isPrototypeOf-判断当前对象是否在指定对象的原型链中(若存在，则返回true,反之返回false)
+    4.propertyIsEnumerable-判断属性是否可枚举(若可枚举，则返回true,反之返回false)
+    5.valueOf()
+     1)基本类型：返回对应的值
+     2)引用类型：返回对象本身(自己、自身)
+     3)日期类型：返回时间戳
+    6.toString()
+     1)基本类型：返回对应值的字符串
+     2)引用类型：Object [object,Object]
+     3)若是数字类型，后面可以传递数字，若传入2，表示返回二进制，若传入8，表示返回八进制，若传入16，表示返回十六进制
+     如何解决数组问题？Object.prototype.toString.call(arr);//注意toString不加括号
+    7.判封装函数判断对象是否是数组(为了兼容所有浏览器)
+    8.toLocaleString()-将日期转换为本地的格式数据
+
+    二，eval()
+    1.eval()和function共同点：
+    二者都是把字符串转换为js能运行的代码
+    2.eval()和function区别：
+    eval()可以直接执行
+    function必须调用后才可以执行
+    3.eval()可以把json数据转换为对象格式，还可以做运算(+ - * / %)
+
+    三，class语法
+    原型方法-直接写函数
+    静态方法-在函数面前加static即可
+    继承的关键字是extends 里面还有super()
+
+    总结：
+    继承的方式:6种
+    1.混入式继承
+    2.原型式继承
+    3.原型链继承
+    4.借用构造函数继承
+    5.组合继承(原型链继承+借用构造函数继承)
+    6.class继承
+    */
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        拷贝：
+        1.浅拷贝：浅拷贝只拷贝一层，会存在数据共享问题(修改其中一个，另一个也会被修改)
+        2.深拷贝：深拷贝是一层一层拷贝，每一层都会独立开辟空间
+        */
+        var p1 = {
+            name: "zs",
+            age: 18,
+            like: ["Java", "H5前端", "UI"],
+            wife: {
+                name: "lily",
+                age: 20
+            }
+        }
+        var p2 = {};//空对象
+
+        //封装一个函数(为了实现深拷贝)
+        function deepCopy(source, target) {//source数据源(即从哪里拷贝),target目标(拷贝到哪里)-形参
+            //循环遍历
+            for (var key in source) {//in遍历所有(不论是私有还是公有)
+                //判断只要私有属性
+                if (source.hasOwnProperty(key)) {//只拷贝私有属性，不拷贝原型上的属性
+                    if(typeof source[key] == "object"){//此时表示引用类型
+                        // console.log(source[key]);//测试
+
+                        // console.log(target[key]);//测试-undefined-出错
+                        
+                        target[key] = {};//拿一个对象来接收，但变为对象了，所以需要判断-引出三元运算符
+                        target[key] = Array.isArray(source[key]) ? [] : {};
+
+                        //引出递归：自己调用自己
+                        deepCopy(source[key],target[key]);
+                    }
+                }else{
+                    //表示拷贝了值类型
+                    target[key] = source[key];
+                }
+            }
+        }
+
+        //调用函数
+        deepCopy(p1,p2);
+        console.log(p2);
+        p2.wife.name = "翠花";
+        console.log(p1);
+
+    </script>
+</body>
+
+</html>

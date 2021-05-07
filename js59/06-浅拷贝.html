@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        拷贝：
+        1.浅拷贝：浅拷贝只拷贝一层，会存在数据共享问题(修改其中一个，另一个也会被修改)
+        2.深拷贝
+        */
+       var obj1 = {
+           name:"zs",
+           age:18,
+           like:["Java","H5前端","UI"],
+           wife:{
+               name:"lily",
+               age:20
+           }
+       }
+       var obj2 = {};//空对象
+       //for in-拷贝obj1到obj2中
+       for(var key in obj1){
+           obj2[key] = obj1[key];
+       }
+       console.log(obj2);
+       obj2.wife.name = "翠花";
+       console.log(obj1);
+       //存在数据共享问题
+    </script>
+</body>
+</html>
