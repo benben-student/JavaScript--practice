@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           // 通过字面量的方式创建数组
+        // 我们创建数组有两种方式：
+        // 第一种：字面量创建数组
+        // var arr = [];//空数组
+
+        var arr = [10,20,30,40,50,60];//第一种方式
+        console.log(arr);
+
+        // 第二种方式 ：内置构造函数方式 new 来创建
+        var array = new Array(10,20,30,40,50,60);
+        console.log(array);
+        console.log(array.length);
+        console.log(array[2]);
+
+
+         // 第一、instanceof 判断这个对象是否是数组,如果是数组返回true,如果不是数组返回false
+         var arr = [];
+        console.log(arr instanceof Array);//true
+
+        
+        // 第二种方法: isArray也是判断这个对象是否是数组，如果是数组返回true，如果不是数组返回false
+        console.log(Array.isArray(arr));//true
+    </script>
+</body>
+</html>

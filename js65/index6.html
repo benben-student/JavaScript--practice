@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          //.length ---获取字符串的长度
+          var str = "what are you no sha lei";
+        console.log(str.length);
+
+        // .charAt(索引) 返回值是指定索引位置的字符串，如果超出了，返回空字符串
+        var str1 = "what are you no sha lei";
+        // var str2 = str1.charAt(9);
+        var str2 = str1.charAt(100);
+        console.log(str2);
+
+         // .fromCharCode(数字值,可以是多个) 返回的是ASCII码的对应的值
+        // var str3 = String.fromCharCode(65,66,67);
+        var str3 = String.fromCharCode(83,79,83);//SOS
+        console.log(str3);
+
+         //.concat(字符串1,字符串2...) 返回拼接之后的新的字符串
+       var str1 = "我们";
+       var str2 = str1.concat("曾经","跨过","山河","大海");
+       console.log(str2);
+
+         //.indexOf(要找的字符串,从什么位置开始) 返回时这个字符串的索引,如果没有找到返回 -1，如果找到了就显示这个字符串的索引位置（注意：从什么位置开始是可以省略的）
+         var str3 = "我们曾经长发飘飘蛮开心，嗨皮,开心哦，开心噢噢";
+        // var index = str3.indexOf("心");
+        var index = str3.indexOf("心",12);
+        console.log(index);
+
+             // .lastIndexOf(); 从后往前查找，但是字符串的索引位置还是从左往右查询的
+             var str4 = "hello word";
+        var index1 = str4.lastIndexOf("o");
+        console.log(index1);
+
+          // .slice(开始的索引,结束的索引) 从索引5的位置开始提取，到索引10的前一个结束，没有10的（包含5 不包含10的） 返回提取后的字符串
+        var str1 = "如果有一天发现了我没有头发了，请记住，我曾经长发飘飘";
+        var str2 = str1.slice(19);//第二个参数可以省略，如果结束的索引不写，就截取了所有
+        console.log(str2);
+
+         //.replace("原来的字符串","新的字符串"); 用来替换字符串
+
+
+
+             // .split("以什么字符串拆分","拆分后留下的字符串个数") 第二参数也可以省略 以什么字符串来拆分，他是把字符串以指定的字符拆分成数组
+    var str="乔峰|慕容|凤姐|梅超风|小明|大蛇丸";
+    var arr = str.split("|");
+    console.log(arr);
+
+    // .substr(开始的位置,个数) 返回的是截取后的新的字符串，个数可以省略
+    var str1 = "我们都是靓仔,靓妹";
+    var str2 = str1.substr(4,5);
+    console.log(str2);
+
+    // .substring(开始的索引,结束的索引) 返回截取后的新的字符串，不包含结束的索引
+    var str3 = "哈哈,嘻嘻,么么哒";
+    var str4 = str3.substring(6,9);
+    console.log(str4);
+    // 总结：索引都是从0开始的
+
+
+       // .toLocaleLowerCase() 转换小写字母的
+        // .toLowerCase();转小写 两个方法都是转换小写的
+        var str1 = "LIVE ME";
+        // var str2 = str1.toLowerCase();
+        var str2 = str1.toLocaleLowerCase();
+        console.log(str2);
+
+
+                // .toLocaleUpperCase() 转大写
+        // .toUpperCase(); 转大写
+        var str3 = "what are you no sha lei";
+        // var str4 = str3.toUpperCase();
+        var str5 = str3.toLocaleUpperCase();
+        console.log(str5);
+
+
+          // .trim() 删除两端的空格，中间的空格是删除不了的
+          console.log("===============");
+        var  str6 = "       今天又是神奇的一天      哦我们学了很多的内置对象     ";
+        var str7 = str6.trim();
+        console.log(str7);
+    </script>
+    
+</body>
+</html>
