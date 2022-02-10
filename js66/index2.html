@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body> 
+    <!-- // 如果你的js想放到上面，记得加入口函数
+    window.onload = function () {//JS的入口函数
+        // 定义一个变量来接收
+        var btn = document.getElementById("btn");//--规范  获取事件源
+        /* 
+        公式：
+        事件源.事件 = function(){//匿名函数----工作里面的写法--最完美的写法
+            要执行的代码;
+        }
+        */
+        btn.onclick = function () {
+            alert("这个写法是真正的实现了HTML和JS分离写法,哦，我又学会了,简单--加油")
+        }
+    } -->
+    <button id="a">点我啊</button>
+    <img src="01.jpg" alt="" id="b">
+    <script>
+        var btn=document.getElementById('a')
+        btn.onclick=function(){
+          var  ctn=document.getElementById('b')
+          ctn.src='02.jpg'
+        }
+ </script>
+    
+</body>
+</html>
