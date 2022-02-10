@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="a">点我啊</button>
+    <script>
+        //函数自调用
+        (function(){
+             console.log('hello world')
+        }
+        )();
+        //JS内置对象
+        console.log(Math.max(12,45,78,56,23,23,89))
+        console.log(Math.min(5,45,78,45,13,4,87,45,54))
+        //圆周率
+        console.log(Math.PI)
+        //绝对值Math.abs()
+        console.log(Math.abs('-45'))
+        Math.random() //:获取一个 0 到 1 之间的随机数，浮点数（小数）包括0 不包含 1可以用[0,1)
+        console.log(Math.random());
+
+        console.log(parseInt(Math.random() * 5));//获取0-5之间的随机整数 包含0不包含5
+        console.log(parseInt(Math.random() * 5) + 1);//获取1-5之间的随机整数 包含1也包含5
+
+         console.log(parseInt(Math.random() * 100) + 1);//1-100
+         document.getElementById('a').onclick=function(){
+          var names=['1','2','3','5','8','7']
+          var out=parseInt(Math.random() * names.length)
+          alert(names[out])
+         }
+         
+    </script>
+    
+</body>
+</html>
