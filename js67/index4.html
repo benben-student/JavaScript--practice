@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 200px;
+            background: skyblue;
+        }
+        .cls{
+            display: none;/*这个类就是隐藏的意思*/
+        }
+        </style>
+</head>
+<body>
+    <input type="button" value="隐藏" id="btn">
+    <div id="dv"></div>
+    <script>
+        var btn=document.getElementById('btn')
+        // btn.onclick=function(){
+        //     if(document.getElementById('dv').className!='cls'){
+        //         document.getElementById('dv').className='cls'
+        //         this.value='显示'
+        //     }else{
+        //          document.getElementById('dv').className=''
+        //          this.value='隐藏'
+        //     }
+        // }
+        btn.onclick=function(){
+            if(this.value=='隐藏'){//必须加==
+                document.getElementById('dv').style.display='none'
+                this.value='显示'
+            }else if(this.value=='显示'){//必须加==
+                 document.getElementById('dv').style.display='block'
+                 this.value='隐藏'
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="隐藏" id="btn">
+    <div id="dv"></div>
+    <script>
+        var btn = document.getElementById('btn')
+        btn.onclick = function () {
+            if (this.value == '隐藏') {
+                document.getElementById('dv').style.display = 'none'
+                this.value = '显示'
+            } else if (this.value == '显示') {
+                document.getElementById('dv').style.display = 'block'
+                this.value = '隐藏'
+            }
+        }
+    </script>
+
+</body>
+
+</html>
