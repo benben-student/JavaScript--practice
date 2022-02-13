@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[4,1,2,7,8,5,9,6,3]
+        for(var i=0;i<arr.length;i++){
+            for(var j=0;j<arr.length-1-i;j++){
+                if(arr[j]<arr[j+1]){
+                    var temp=arr[j]
+                    arr[j]=arr[j+1]
+                    arr[j+1]=temp
+                }
+            }
+        }
+        console.log(arr)
+        var brr=[78,45,12,89,56,23,25,36,69]
+        for(var a=0;a<brr.length;a++){ 
+               for(var b=0;b<brr.length-1-a;b++){
+                       if(brr[b]>brr[b+1]){
+                           var bmp=brr[b]
+                           brr[b]=brr[b+1]
+                           brr[b+1]=bmp
+                       }
+               }
+        }
+        console.log(brr)
+        var crr=[45,123,879,78,45,56,98,1234]
+        for(var c=0;c<crr.length;c++){
+            for(var d=0;d<crr.length-1-c;d++){
+                  if(crr[d]<crr[d+1]){
+                      var cmp=crr[d]
+                      crr[d]=crr[d+1]
+                      crr[d+1]=cmp
+                  }
+            }
+            
+        }
+        console.log(crr)
+    </script>
+    
+</body>
+</html>

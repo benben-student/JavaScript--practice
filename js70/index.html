@@ -112,45 +112,7 @@
 <script src="index.js"></script>
 <script src="animate.js"></script>
 <script>
-    //获取最代码的div
-    var box = my$("box");
-    // 获取相框
-    var ad = box.children[0];
-    // 获取相框的宽度
-    var imgWidth = ad.offsetWidth;//获取盒子的宽度
-    // 获取 ul
-    var ulObj = ad.children[0];
-    // 获取左右焦点---就是左右按钮
-    var focusD = my$("focusD");
-    // 先写鼠标经过和鼠标离开
-    box.onmouseover = function(){
-        focusD.style.display = "block";
-    }
-    // 鼠标离开隐藏
-    box.onmouseout = function(){
-        focusD.style.display = "none"; 
-    }
-
-    // 点击右侧按钮
-    var index = 0;//这个就是我们的第一张图片
-    my$("right").onclick = function(){
-        // 判断
-        if(index < ulObj.children.length - 1){//我们把他学活来，直接利用长度来算
-            index++;
-            animate(ulObj,-index*imgWidth);
-        }
-    }
-
-    // 点击左侧按钮
-    my$("left").onclick = function(){
-        if(index > 0){
-            index--;
-            animate(ulObj,-index*imgWidth);
-        }
-    }
-
-
-
+    
 </script>
 
 </body>

@@ -5,32 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            margin-top: 20px;
+        }
+        div{
+            margin-top: 30px;
+            width: 200px;
+            height: 100px;
+            background: hotpink;
+            position: absolute;/*因为要移动，就要有定位*/
+            /* left:100px; 为了测试的*/
+        }
+    </style>
 </head>
-<body> 
-    <!-- // 如果你的js想放到上面，记得加入口函数
-    window.onload = function () {//JS的入口函数
-        // 定义一个变量来接收
-        var btn = document.getElementById("btn");//--规范  获取事件源
-        /* 
-        公式：
-        事件源.事件 = function(){//匿名函数----工作里面的写法--最完美的写法
-            要执行的代码;
-        }
-        */
-        btn.onclick = function () {
-            alert("这个写法是真正的实现了HTML和JS分离写法,哦，我又学会了,简单--加油")
-        }
-    } -->
-    <button id="a">点我啊</button>
-    <img src="01.jpg" alt="" id="b">
+<body>
+    <input type="button" value="移动到400px" id="btn1">
+    <div id="dv"></div>
+    <script src="index.js"></script>
     <script>
-        var btn=document.getElementById('a')
-        btn.onclick=function(){
-          var  ctn=document.getElementById('b')
-          ctn.src='02.jpg'
-        }
- </script>
+          my$('btn1').onclick=function(){
+              var timeId=setInterval(function(){
+                  var current=my$('dv').offsetLeft
+                  var temp=10;
+                  current +=temp;
+                  if(current<=400){
+                     my$('dv').style.left=current+'px'
+                  }else{
+                      clearInterval(timeId);
+                  }
+              },20)
+          }
     
+    </script>
 </body>
 </html>

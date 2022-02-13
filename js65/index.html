@@ -8,41 +8,18 @@
 </head>
 <body>
     <script>
-        var arr=[4,1,2,7,8,5,9,6,3]
-        for(var i=0;i<arr.length;i++){
-            for(var j=0;j<arr.length-1-i;j++){
-                if(arr[j]<arr[j+1]){
-                    var temp=arr[j]
-                    arr[j]=arr[j+1]
-                    arr[j+1]=temp
-                }
-            }
-        }
-        console.log(arr)
-        var brr=[78,45,12,89,56,23,25,36,69]
-        for(var a=0;a<brr.length;a++){ 
-               for(var b=0;b<brr.length-1-a;b++){
-                       if(brr[b]>brr[b+1]){
-                           var bmp=brr[b]
-                           brr[b]=brr[b+1]
-                           brr[b+1]=bmp
-                       }
-               }
-        }
-        console.log(brr)
-        var crr=[45,123,879,78,45,56,98,1234]
-        for(var c=0;c<crr.length;c++){
-            for(var d=0;d<crr.length-1-c;d++){
-                  if(crr[d]<crr[d+1]){
-                      var cmp=crr[d]
-                      crr[d]=crr[d+1]
-                      crr[d+1]=cmp
-                  }
-            }
-            
-        }
-        console.log(crr)
+        /* 
+        到此我们学习三种元素创建的方式
+        第一、document.write()
+        缺陷：如果页面加载完毕之后，通过这种方式，那么后面页面上的内容会被覆盖
+         */
+
+         
+        // 第二、innerHTML
+        // 第三、创建元素方式：分两步
+        //     1、先创建元素 document.createElement("标签名")
+        //     2、把创建好的元素追加到父元素身上、里面 appendChild()
+        
     </script>
-    
 </body>
 </html>
