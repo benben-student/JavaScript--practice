@@ -94,23 +94,22 @@
     <script src="publick.js"></script>
     <script src="animate.js"></script>
     <script>
-        var box = my$('box')
-        var inner = box.children[0]
-        var ul = inner.children[0]
-        var span = inner.children[1].children
-        var imgWidth = inner.offsetWidth
-        for (i = 0; i < span.length; i++) {
-            span[i].setAttribute('index', i)
-            span[i].onclick = function () {
-                for (var j = 0; j < span.length; j++) {
-                    span[j].removeAttribute('class')
+      var box=my$('box');
+      var inner=box.children[0]
+      var ul=inner.children[0]
+      var span=inner.children[1].children
+      var imgWidth=inner.offsetWidth
+      for(var i=0;i<span.length;i++){
+            span[i].setAttribute('index',i)
+            span[i].onclick=function(){
+                for(var j=0;j<span.length;j++){
+                     span[j].removeAttribute('class')
                 }
-                this.className = 'current'
-                var index = this.getAttribute('index')
-                animate(ul, -index * imgWidth)
+                this.className='current'
+                var index=this.getAttribute('index')
+                animate(ul,-index*imgWidth)
             }
-
-        }
+      }
 
     </script>
 </body>
