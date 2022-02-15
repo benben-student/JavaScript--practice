@@ -54,7 +54,25 @@
 <script src="index.js"></script>
 <script src="animate.js"></script>
 <script>
-        
+        var current=0;
+        var screen=my$('screen');
+        function f1(){
+            var ul=screen.children[0];
+            if(current<-1200){
+               ul.style.left=0+'px'
+               current=0
+            }else{
+                current-=10;
+              ul.style.left=current+'px'
+            }
+        }
+        var timeId=setInterval(f1,20)
+        screen.onmouseover=function(){
+            clearInterval(timeId)
+        }
+        screen.onmouseout=function(){
+            timeId=setInterval(f1,20)
+        }
 </script>
 </body>
 </html>
