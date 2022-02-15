@@ -112,30 +112,30 @@
 <script src="index.js"></script>
 <script src="animate.js"></script>
 <script>
-    var box=my$('box');
-    var ad=box.children[0];
-    var ul=ad.children[0];
-    var imgWidth=ad.offsetWidth;
-    var focusD=my$('focusD')
-    box.onmouseover=function(){
+   var box=my$('box');
+   var ad=box.children[0];
+   var ul=ad.children[0]
+   var imgWidth=ad.offsetWidth;
+   var focusD=my$('focusD')
+   box.onmouseover=function(){
         focusD.style.display='block'
-    }
-    box.onmouseout=function(){
-        focusD.style.display='none'
-    }
-    var index=0;
-    my$('left').onclick=function(){
-        if(index>0){
-             index--;
-             animate(ul,-index*imgWidth)
-        }
-    }
-    my$('right').onclick=function(){
-        if(index<ul.children.length-1){
-             index++;
-             animate(ul,-index*imgWidth)
-        }
-    }
+   }
+   box.onmouseout=function(){
+       focusD.style.display='none'
+   }
+   var index=0;
+   my$('left').onclick=function(){
+       if(index>0){
+           index--;
+           animate(ul,-index*imgWidth)
+       }
+   }
+   my$('right').onclick=function(){
+       if(index<ul.children.length-1){
+         index++;
+        animate(ul,-index*imgWidth)
+       }
+   }
 </script>
 
 </body>
